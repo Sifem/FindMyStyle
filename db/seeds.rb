@@ -8,11 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Recommendation.destroy_all
 UserSilhouette.destroy_all
-User.destroy_all
 Silhouette.destroy_all
+User.destroy_all
 # User_shiloutte.destroy_all
-# Recomendation.destroy_all
 
 puts "All the database destroyed"
 puts "Generating database"
