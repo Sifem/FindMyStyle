@@ -1,0 +1,25 @@
+
+<div class= "container silhouette-card">
+  <div class= "silhouette-category">
+    <%= @silhouette.category %>
+  </div>
+
+
+  <div class= "silhouette-graphic-description d-flex">
+    <div class= "col-2">
+      <%= image_tag('1.png', alt: 'rectangle',class: 'img-fluid small-image') %>
+    </div>
+    <div class= "col-10 ps-2">
+      <h1><%= @silhouette.neutral_silhouette.upcase %></h1>
+    <h2>Your natural silhouette is the <%= @silhouette.neutral_silhouette.capitalize %> if:</h2>
+    </div>
+  </div>
+
+
+
+  <div class= "silhouette-text-description container">
+    <div class="no-patience ">
+      <%= raw @silhouette.description%>
+    </div>
+  </div>
+</div>
