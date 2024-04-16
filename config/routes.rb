@@ -9,6 +9,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  
+
+
+  get "select_silhouette", to: "pages#select_silhouette"
+
+
+
+
+
   # post "select" => "user_silhouettes#select", as: :select
   # get "generate" => "user_silhouettes#generate", as: :generate
   # get "show" => "user_silhouettes#show", as: :user_silhouettes_show
