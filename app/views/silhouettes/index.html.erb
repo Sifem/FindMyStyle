@@ -1,3 +1,12 @@
+<h2>Dress</h2>
+<div class="grid-container">
+<div class="test">
+<div class="card">
 <% @silhouettes.each do |silhouette| %>
 <%= silhouette.neutral_silhouette %>
+<%= link_to  cl_image_tag("1_y8qpsm",
+      width: 200, height: 150, crop: :fill), silhouette_path(silhouette)  %>
 <% end %>
+</div>
+</div>
+</div>

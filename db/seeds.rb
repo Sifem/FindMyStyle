@@ -7,7 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+require "open-uri"
+silhouettes = Silhouette.where(combined_silhouette: nil)
+silhouettes.each { |silhouette| silhouette.photo.purge }
 Recommendation.destroy_all
 UserSilhouette.destroy_all
 Silhouette.destroy_all
@@ -28,9 +30,12 @@ sylvia = User.create!(email: 'sylvia@gmail.com', password: '123456', full_name: 
 
 
 #silhouettes
+file = URI.open("https://res.cloudinary.com/dyle4qbxp/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1711448749/pexels-yuri-manei-2235071_rmoew6.jpg?_s=public-apps")
+rectangle = Silhouette.new(neutral_silhouette: "retangle", combined_silhouette: nil)
+rectangle.photo.attach(io: file, filename: "a", content_type: "image/png")
+rectangle.save!
 
-rectangle = Silhouette.create!(neutral_silhouette: "retangle", combined_silhouette: nil)
-hourglass= Silhouette.create!(neutral_silhouette: "hourglass", combined_silhouette: nil)
+hourglass = Silhouette.create!(neutral_silhouette: "hourglass", combined_silhouette: nil)
 eight = Silhouette.create!(neutral_silhouette: "eight", combined_silhouette: nil)
 inverted_triangle = Silhouette.create!(neutral_silhouette: "inverted_triangle", combined_silhouette: nil)
 triangle = Silhouette.create!(neutral_silhouette: "triangle", combined_silhouette: nil)
