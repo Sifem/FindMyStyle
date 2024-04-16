@@ -1,0 +1,44 @@
+.silhouette-card {
+    padding: 20px;
+    height: 100vh;
+}
+
+.silhouette-category {
+  background-color: $new-yellow;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.silhouette-graphic-description {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+  }
+
+.silhouette-graphic-descrption h1 {
+    font-size: larger;
+    font-weight: bolder;
+  }
+
+.silhouette-graphic-description h2 {
+    font-size: smaller;
+  }
+
+.silhouette-text-description {
+  display: flex;
+  height: 70vh;
+  align-items: center;
+}
+
+.silhouette-text-description ul {
+ list-style-type: none;
+}
+
+.silhouette-text-description li:before {
+  font-family: 'FontAwesome';
+  content:
+  font-weight: 900;
+  color: aqua;
+  position: absolute;
+}

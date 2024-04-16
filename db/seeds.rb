@@ -29,17 +29,70 @@ sifem = User.create!(email: 'sifem@gmail.com', password: '123456', full_name: 's
 sylvia = User.create!(email: 'sylvia@gmail.com', password: '123456', full_name: 'sylvia', payment: true)
 
 
-#silhouettes
-file = URI.open("https://res.cloudinary.com/dyle4qbxp/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1711448749/pexels-yuri-manei-2235071_rmoew6.jpg?_s=public-apps")
-rectangle = Silhouette.new(neutral_silhouette: "retangle", combined_silhouette: nil)
-rectangle.photo.attach(io: file, filename: "a", content_type: "image/png")
-rectangle.save!
 
-hourglass = Silhouette.create!(neutral_silhouette: "hourglass", combined_silhouette: nil)
-eight = Silhouette.create!(neutral_silhouette: "eight", combined_silhouette: nil)
-inverted_triangle = Silhouette.create!(neutral_silhouette: "inverted_triangle", combined_silhouette: nil)
-triangle = Silhouette.create!(neutral_silhouette: "triangle", combined_silhouette: nil)
-oval = Silhouette.create!(neutral_silhouette: "oval", combined_silhouette: nil)
+rectangle = Silhouette.create!(neutral_silhouette: "rectangle",
+                               combined_silhouette: nil,
+                               description:
+                              "<p>Your waist is as wide as or just slightly narrower than your shoulders and hipps/thights.
+                                  <br>
+                                  This body shape dictates that garment pieces have straight vertical side seams or give the impression of one continuous vertical seam line from shoulder to hem.
+                                  </p>
+
+                                <ul>
+                                  <li><i class='fa-brands fa-square-instagram'></i>The shoulders are never optically diminished.</li>
+                                  <li>The shoulders never extend beyond the hips.</li>
+                                  <li>Skirts do not taper or flare out at the bottom.</li>
+                                  <li>Any other straight vertical lines within the garment will add to
+                                  the rectangular quality of this silhouette</li>
+                                </ul>",
+                               category: "The Wide-Waisted Silhouette")
+
+hourglass= Silhouette.create!(neutral_silhouette: "hourglass",
+                              combined_silhouette: nil,
+                              description:
+                              "<ul>
+                                <li>Your shoulders are square and are relatively as wide as your hips/thighs.</li>
+                                <li>And your waist is distinctly narrower than your shoulders and hips/thighs.</li>
+                              </ul>",
+                              category: "The Narrow-Waisted Silhouette")
+
+eight = Silhouette.create!(neutral_silhouette: "eight",
+                           combined_silhouette: nil,
+                           description:
+                           "<ul>
+                            <li>Your shoulders are curved and are relatively as wide as your hips/thighs.</li>
+                            <li>Your waist is distictly narrower than your shoulders and hips/thighs.</li>
+                           </ul>",
+                           category: "The Narrow-Waisted Silhouette")
+
+inverted_triangle = Silhouette.create!(neutral_silhouette: "inverted triangle",
+                                       combined_silhouette: nil,
+                                       description:
+                                       "<ul>
+                                          <li>Your shoulders are wider than your waist and hips/thighs.</li>
+                                       </ul>",
+                                       category: "The Wide-Waisted Silhouette")
+
+triangle = Silhouette.create!(neutral_silhouette: "triangle",
+                              combined_silhouette: nil,
+                              description:
+                              "<ul>
+                                <li>Your shoulders and waist are narrower than your hips.</li>
+                              </ul>",
+                              category: "The Wide or Narrow-Waisted Silhouette")
+
+oval = Silhouette.create!(neutral_silhouette: "oval",
+                          combined_silhouette: nil,
+                          description:
+                          "<ul>
+                            <li>Your shoulders are narrower or as wide as your hips/thighs.</li>
+                            <li>From the front view, your waist appears the same with as,
+                            or slightly wider than, or noticeably wider than your shoulders and/or hips.</li>
+                            <li>From the side view, your waist does not indent but seems to extend out in front and sometimes in back,
+                            giving a barrel-like impression from your shoulders to your hips</li>
+                           </ul>",
+                          category: "The Wide-Waisted Silhouette")
+
 
 #
 
