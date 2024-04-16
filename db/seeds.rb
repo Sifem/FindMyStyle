@@ -7,14 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-UserSilhouette.destroy_all
+require "open-uri"
+silhouettes = Silhouette.where(combined_silhouette: nil)
+silhouettes.each { |silhouette| silhouette.photo.purge }
 Recommendation.destroy_all
+UserSilhouette.destroy_all
 Silhouette.destroy_all
 User.destroy_all
-
 # User_shiloutte.destroy_all
-# Recomendation.destroy_all
 
 puts "All the database destroyed"
 puts "Generating database"
@@ -29,7 +29,6 @@ sifem = User.create!(email: 'sifem@gmail.com', password: '123456', full_name: 's
 sylvia = User.create!(email: 'sylvia@gmail.com', password: '123456', full_name: 'sylvia', payment: true)
 
 
-#silhouettes
 
 rectangle = Silhouette.create!(neutral_silhouette: "rectangle",
                                combined_silhouette: nil,
@@ -93,6 +92,7 @@ oval = Silhouette.create!(neutral_silhouette: "oval",
                             giving a barrel-like impression from your shoulders to your hips</li>
                            </ul>",
                           category: "The Wide-Waisted Silhouette")
+
 
 #
 
