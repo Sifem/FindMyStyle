@@ -6,6 +6,13 @@ class PagesController < ApplicationController
 
   def select_silhouette
     @silhouettes = Silhouette.all
+
+
+ 
+
+
+
+
   end
 
 end
