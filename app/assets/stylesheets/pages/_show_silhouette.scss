@@ -1,6 +1,6 @@
 .silhouette-card {
-    padding: 20px;
-    height: 100vh;
+  padding: 20px;
+  height: 100vh;
 }
 
 .silhouette-category {
@@ -31,14 +31,11 @@
   align-items: center;
 }
 
-// .silhouette-text-description ul {
-//  list-style-type: none;
-// }
+.silhouette-text-description ul {
+ list-style-type: none;
+}
 
-// .silhouette-text-description li:before {
-//   font-family: 'FontAwesome';
-//   content:
-//   font-weight: 900;
-//   color: aqua;
-//   position: absolute;
-// }
+.silhouette-text-description li i {
+  color: $new-violet;
+  margin-right: 10px;
+}
