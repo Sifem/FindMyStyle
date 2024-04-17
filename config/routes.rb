@@ -17,10 +17,5 @@ Rails.application.routes.draw do
   # get "payment" => "users#payment", as: :payment
   resources :silhouettes, only: %i[show index]
 
-  
-
-
   get "select_silhouette", to: "pages#select_silhouette"
-
-
 end

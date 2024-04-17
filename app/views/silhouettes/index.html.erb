@@ -1,12 +1,19 @@
-<h2>Dress</h2>
-<div class="grid-container">
-<div class="test">
-<div class="card">
-<% @silhouettes.each do |silhouette| %>
-<%= silhouette.neutral_silhouette %>
-<%= link_to  cl_image_tag("1_y8qpsm",
-      width: 200, height: 150, crop: :fill), silhouette_path(silhouette)  %>
-<% end %>
+<div class="index-container">
+<div>
+  <i link_to  class=" d-flex fa-solid fa-arrow-left"></i>
 </div>
+  <h2>Explore</h2>
+  <h3>Explore silhouette options below:</h3>
+<div class="grid-container d-flex flex-column justify-content-center w-75 mx-auto g-3">
+    <% @silhouettes.each do |silhouette| %>
+  <%= link_to silhouette_path(silhouette), class:"text-decoration-none" do  %>
+    <div class="card <%=silhouette.neutral_silhouette.gsub(" ","_")%> my-2 p-2">
+    <div class="card-image">
+    </div>
+    <%= image_tag('1.png', alt: 'rectangle',class: 'img-fluid small-image') %>
+    The <%= silhouette.neutral_silhouette.upcase %>
+    </div>
+  <% end %>
+<% end %>
 </div>
 </div>
