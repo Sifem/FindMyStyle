@@ -1,6 +1,42 @@
-.grid-container {
-  display: grid;
-  grid-auto-flow: column;
-  border-color: red;
+.index-container {
+padding: 10%;
+text-align: center;
+
+h2 {
+  margin-bottom: 40%;
+  font-weight: bolder;
+  font-family:'Courier New', Courier, monospace;
 }
+
+
+h3 {
+  margin-bottom: 30px;
+  font-family:'Courier New', Courier, monospace;
+}
+
+}
+
+.grid-container {
+  .card {
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+  }
+
+  .card-image {
+    position: relative;
+}
+
+  .small-image {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    max-width: 30%;
+  }
+
+  .img-fluid {
+    max-width: 10;
+    height: 130%;
+}
+
+  }
 

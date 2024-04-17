@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :silhouettes, only: %i[show index]
 
   get "select_silhouette", to: "pages#select_silhouette"
+
+
   get "find_my_style", to: "pages#find_my_style"
+
 
 end
