@@ -66,6 +66,7 @@ hourglass = Silhouette.new(neutral_silhouette: "hourglass",
 hourglass.photo.attach(io: file, filename: "b", content_type: "image/png")
 hourglass.save
 
+
 file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_eight_over.png")
 eight = Silhouette.new(neutral_silhouette: "eight",
                            combined_silhouette: nil,
@@ -102,7 +103,7 @@ triangle.photo.attach(io: file, filename: "e", content_type: "image/png")
 triangle.save
 
 file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_circle_over.png")
-oval = Silhouette.create!(neutral_silhouette: "oval",
+oval = Silhouette.new(neutral_silhouette: "oval",
                           combined_silhouette: nil,
                           description:
                           "<ul>
@@ -130,26 +131,83 @@ invertedtriangleeight = Silhouette.create!(neutral_silhouette: "inverted_triangl
 
 irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass.id)
 leesshape = UserSilhouette.create!(user_id: lee.id, silhouette_id: ovalinverted.id)
-sifemsshape = UserSilhouette.create!(user_id: sifem.id, silhouette_id: hourglass.id)
+sifemsshape = UserSilhouette.create!(user_id: sifem.id, silhouette_id: rectangle.id)
 sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrectangle.id)
 
 #recomendations
 
-Recommendation.create!(silhouette_id: rectangle.id,
-                      description: "Go to the gym",
-                      body_part: "waist",
-                      function: "narrow waist",
-                      item: "belt")
-Recommendation.create!(silhouette_id: invertedtriangleeight.id,
-                      description: "A nice thing is a jackey",
-                      body_part: "torse",
-                      function: "upper volume",
-                      item: "jacket")
+# Recommendation.create!(silhouette_id: rectangle.id,
+#                       description: "Go to the gym",
+#                       body_part: "waist",
+#                       function: "narrow waist",
+#                       item: "belt")
+# Recommendation.create!(silhouette_id: invertedtriangleeight.id,
+#                       description: "A nice thing is a jackey",
+#                       body_part: "torse",
+#                       function: "upper volume",
+#                       item: "jacket")
 
-Recommendation.create!(silhouette_id: iventertedtrianglehour.id,
-                        description: "A nice thing is a jackey",
-                        body_part: "torse",
-                        function: "upper volume",
-                        item: "jacket")
+# Recommendation.create!(silhouette_id: iventertedtrianglehour.id,
+#                         description: "A nice thing is a jackey",
+#                         body_part: "torse",
+#                         function: "upper volume",
+#                         item: "jacket")
 
-puts "New database created"
+                        Recommendation.create!(
+                          description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
+                          body_part: "Waist",
+                          function: "Contour",
+                          item: "Side-Seamed Jacket",
+                          silhouette_id: oval.id
+                        )
+                        Recommendation.create!(
+                          description: "A belted dress that emphasizes the waist and follows the body's natural curves.",
+                          body_part: "Waist",
+                          function: "Emphasize",
+                          item: "Belted Dress",
+                          silhouette_id: figure_eight.id
+                        )
+                        Recommendation.create!(
+                          description: "A flared peplum jacket that enhances the hourglass silhouette by emphasizing the waist.",
+                          body_part: "Waist",
+                          function: "Highlight",
+                          item: "Flared Peplum Jacket",
+                          silhouette_id: hourglass.id
+                        )
+                        Recommendation.create!(
+                          description: "A full skirt to balance the narrower upper body of the triangle silhouette.",
+                          body_part: "Hips",
+                          function: "Balance",
+                          item: "Full Skirt",
+                          silhouette_id: triangle.id
+                        )
+                        Recommendation.create!(
+                          description: "A peplum top to add volume to the hips and balance the broader shoulders of the inverted triangle silhouette.",
+                          body_part: "Hips",
+                          function: "Widen",
+                          item: "Peplum Top",
+                          silhouette_id: inverted_triangle.id
+                        )
+                        # Create Recommendations for Rectangle Silhouette
+                        Recommendation.create!(
+                          description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+                          body_part: "Core",
+                          function: "Enhance Shape",
+                          item: "Belted Coat",
+                          silhouette_id: rectangle.id
+                        )
+                        Recommendation.create!(
+                          description: "Emphasize your waist with a stylish high-waisted skirt. The raised waistline draws the eye upward, creating the appearance of a narrower waist and providing a flattering division between your upper and lower body. Choose a skirt with subtle pleating or a flare to add volume and balance to your rectangle silhouette.",
+                          body_part: "Waist",
+                          function: "Accentuate",
+                          item: "High-waisted Skirt",
+                          silhouette_id: rectangle.id
+                        )
+                        Recommendation.create!(
+                          description: "Enhance your rectangle silhouette by adding some volume to your hips with a peplum top. The flared ruffle at the waist creates a more pronounced hip area, balancing your silhouette and giving the illusion of curves. This top is particularly effective for creating a more feminine shape, ideal for those with a more linear body type like the rectangle silhouette.",
+                          body_part: "Hips",
+                          function: "Add Volume",
+                          item: "Peplum Top",
+                          silhouette_id: rectangle.id
+                        )
+                        puts "Recommendations for Rectangle Silhouette added successfully!"

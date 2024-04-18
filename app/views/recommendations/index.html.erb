@@ -1,0 +1,27 @@
+<h1>Style recommendations are ready for <%= current_user.full_name.capitalize %></h1>
+
+ <% @recommendations.each do |recommendation| %>
+<div class="cards">
+	<article class="information [ card ]">
+		<h2 class="title"><%= recommendation.item %></h2>
+		<p class="info"><%= recommendation.description %></p>
+		<dl class="details">
+			<div>
+				<dt><%= recommendation.body_part %></dt>
+				<dd>Body Part</dd>
+			</div>
+			<div>
+				<dt><%= recommendation.function %></dt>
+				<dd>Function</dd>
+			</div>
+		</dl>
+    <button class="button">
+			<span>Learn more</span>
+			<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+				<path d="M0 0h24v24H0V0z" fill="none" />
+				<path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
+			</svg>
+		</button>
+	</article>
+</div>
+ <% end %>
