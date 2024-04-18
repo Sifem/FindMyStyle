@@ -1,12 +1,41 @@
-.logo-text{
-  font-size: 40px;
-  color: $new-pink;
+.landing-container {
+  // display: flex;
+  text-align: center;
+  background: rgb(230,252,255);
+  background: linear-gradient(90deg, rgba(230,252,255,0.4290091036414566) 0%, rgba(144,244,255,0.3981967787114846) 100%);
+  padding: 30px ;
+  height: 100vh;
+
+  .logo-container{
+    margin: 40px;
+
+  }
+}
+.logo-text h1{
+  font-size: 60px;
+  color: $new-dark-blue;
+  font-weight: 790;
 }
 
-.container {
-  background-color: blueviolet;
-}
+.register-container {
+  margin: 20px;
 
-h1 {
-  color: green;
+  input {
+    background-color: $new-pink;
+    border-radius: 4.8px;
+    box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+    border-style: hidden;
+    padding: 10px;
+}}
+
+.singin-container {
+  margin:20px;
+
+  input {
+    background-color: $new-pink;
+    border-radius: 4.8px;
+    box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+    border-style: hidden;
+    padding: 10px;
+  }
 }

@@ -24,6 +24,6 @@ Rails.application.routes.draw do
 
 
   get "find_my_style", to: "pages#find_my_style"
-
+  get "home", to: "pages#home"
 
 end
