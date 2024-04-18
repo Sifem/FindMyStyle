@@ -1,13 +1,14 @@
-<div class="card-select text-center">
+<div class="select-container">
+<div class="card-select  text-center">
 <h1>Pick your silhouette match!</h1>
 </div>
 
 
-
+             <div class="select-grid">
             <div class="row g-3 col-12">
             <% @silhouettes.each do |silhouette|  %>
             <div class="d-flex justify-content-around col-4">
-              <div class="card-silhouette-select bg-light p-2">
+              <div class="card-silhouette-select bg-light ">
               <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", class: "img-symbol" %>
               <span><strong><%= silhouette.neutral_silhouette %></strong></span>
               <div><%= cl_image_tag silhouette.photo.key, class: "img-body" %></div>
@@ -15,6 +16,7 @@
             </div>
             <% end  %>
             </div>
+             </div>
 
 
 
@@ -22,3 +24,4 @@
 
 
 <button class="select-button">Go to your Silhouette Match!</button>
+</div>
