@@ -1,46 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "select_silhouette";
-
-h1 {
-  color:black;
-  text-align: left;
-  font-weight: bold;
-  font-size: 32px;
-}
-
-h3 {
-  color:black;
-  text-align: left;
-  font-size: 16px;
-}
-
-p {
-  color:black;
-  font-size: 16px;
-	// font-family: Arial, ;
-}
-
-.hover {
-  color:#5147EB;
-}
-
-.card-recommendations {
-  border-radius: 3;
-  border: #7970f2;
-  padding-left: 10;
-  padding-right: 10;
-  margin: 5;
-}
-
-
-
-
-
-
-
-
-
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap");
 
 *,
@@ -285,3 +245,5 @@ body {
 
 
 }
+
+@import "find_my_style";
