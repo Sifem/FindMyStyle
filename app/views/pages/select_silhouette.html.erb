@@ -1,72 +1,23 @@
-<div class="card-select text-center m-5"><h1>Pick your silhouette match!</h1></div>
+<div class="card-select text-center">
+<h1>Pick your silhouette match!</h1>
+</div>
 
-<div class="container-silhouettes-select p-3">
-    <div class="row g-5">
 
-        <div class="col-6">
-          <div class="card-silhouette-select bg-light">
-            <div class="symbol-info d-flex justify-content-center align-items-center">
-              <%= image_tag "2", class: "img-symbol" %>
-              <span><strong>Rectangle</strong></span>
+
+            <div class="row g-3 col-12">
+            <% @silhouettes.each do |silhouette|  %>
+            <div class="d-flex justify-content-around col-4">
+              <div class="card-silhouette-select bg-light p-2">
+              <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", class: "img-symbol" %>
+              <span><strong><%= silhouette.neutral_silhouette %></strong></span>
+              <div><%= cl_image_tag silhouette.photo.key, class: "img-body" %></div>
+              </div>
             </div>
-            <div><%= image_tag "1", class: "img-body" %></div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="card-silhouette-select bg-light">
-             <div class="symbol-info d-flex justify-content-between align-items-center">
-              <%= image_tag "4", class: "img-symbol" %>
-              <span><strong>Oval</strong></span>
+            <% end  %>
             </div>
-            <div><%= image_tag "3", class: "img-body" %></div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="card-silhouette-select bg-light">
-             <div class="symbol-info d-flex justify-content-between align-items-center">
-              <%= image_tag "6", class: "img-symbol" %>
-              <span><strong>Figure-Eight</strong></span>
-            </div>
-            <div><%= image_tag "5", class: "img-body" %></div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="card-silhouette-select bg-light">
-            <div class="symbol-info d-flex justify-content-center align-items-center">
-              <%= image_tag "8", class: "img-symbol" %>
-              <span><strong>Hourglass</strong></span>
-            </div>
-            <div><%= image_tag "7", class: "img-body" %></div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="card-silhouette-select bg-light">
-             <div class="symbol-info d-flex justify-content-between align-items-center">
-              <%= image_tag "10", class: "img-symbol" %>
-              <span><strong>Triangle</strong></span>
-            </div>
-            <div><%= image_tag "9", class: "img-body" %></div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="card-silhouette-select bg-light">
-             <div class="symbol-info d-flex justify-content-between align-items-center">
-              <%= image_tag "12", class: "img-symbol" %>
-              <span><strong>Inverted-Triangle</strong></span>
-            </div>
-            <div><%= image_tag "11", class: "img-body" %></div>
-          </div>
-        </div>
 
 
 
-      </div>
-    </div>
 
 
 

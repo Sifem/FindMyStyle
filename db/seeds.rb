@@ -28,9 +28,8 @@ irene = User.create!(email: 'irene@gmail.com', password: '123456', full_name: 'i
 sifem = User.create!(email: 'sifem@gmail.com', password: '123456', full_name: 'sifem', payment: true)
 sylvia = User.create!(email: 'sylvia@gmail.com', password: '123456', full_name: 'sylvia', payment: true)
 
-
-
-rectangle = Silhouette.create!(neutral_silhouette: "rectangle",
+file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_rect_over.png")
+rectangle = Silhouette.new(neutral_silhouette: "rectangle",
                                combined_silhouette: nil,
                                description:
                               "<p>Your waist is as wide as or just slightly narrower than your shoulders and hipps/thighs.
@@ -51,8 +50,11 @@ rectangle = Silhouette.create!(neutral_silhouette: "rectangle",
                                   the rectangular quality of this silhouette</li>
                                 </ul>",
                                category: "The Wide-Waisted Silhouette")
+rectangle.photo.attach(io: file, filename: "a", content_type: "image/png")
+rectangle.save
 
-hourglass= Silhouette.create!(neutral_silhouette: "hourglass",
+file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_hour_over.png")
+hourglass = Silhouette.new(neutral_silhouette: "hourglass",
                               combined_silhouette: nil,
                               description:
                               "<ul>
@@ -61,8 +63,11 @@ hourglass= Silhouette.create!(neutral_silhouette: "hourglass",
                                 <li><i class='fa-solid fa-wand-magic-sparkles'></i>And your waist is distinctly narrower than your shoulders and hips/thighs.</li>
                               </ul>",
                               category: "The Narrow-Waisted Silhouette")
+hourglass.photo.attach(io: file, filename: "b", content_type: "image/png")
+hourglass.save
 
-eight = Silhouette.create!(neutral_silhouette: "eight",
+file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_eight_over.png")
+eight = Silhouette.new(neutral_silhouette: "eight",
                            combined_silhouette: nil,
                            description:
                            "<ul>
@@ -71,23 +76,32 @@ eight = Silhouette.create!(neutral_silhouette: "eight",
                             <li><i class='fa-solid fa-wand-magic-sparkles'></i>Your waist is distictly narrower than your shoulders and hips/thighs.</li>
                            </ul>",
                            category: "The Narrow-Waisted Silhouette")
+eight.photo.attach(io: file, filename: "c", content_type: "image/png")
+eight.save
 
-inverted_triangle = Silhouette.create!(neutral_silhouette: "inverted triangle",
+file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/single_reverse_over.png")
+inverted_triangle = Silhouette.new(neutral_silhouette: "inverted triangle",
                                        combined_silhouette: nil,
                                        description:
                                        "<ul>
-                                          <li><i class='fa-solid fa-wand-magic-sparkles'></i>Your shoulders are wider than your waist and hips/thighs.</li>
+                                        <li><i class='fa-solid fa-wand-magic-sparkles'></i>Your shoulders are wider than your waist and hips/thighs.</li>
                                        </ul>",
                                        category: "The Wide-Waisted Silhouette")
+inverted_triangle.photo.attach(io: file, filename: "d", content_type: "image/png")
+inverted_triangle.save
 
-triangle = Silhouette.create!(neutral_silhouette: "triangle",
+file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_triang_over.png")
+triangle = Silhouette.new(neutral_silhouette: "triangle",
                               combined_silhouette: nil,
                               description:
                               "<ul>
                                 <li><i class='fa-solid fa-wand-magic-sparkles'></i>Your shoulders and waist are narrower than your hips.</li>
                               </ul>",
                               category: "The Wide or Narrow-Waisted Silhouette")
+triangle.photo.attach(io: file, filename: "e", content_type: "image/png")
+triangle.save
 
+file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_circle_over.png")
 oval = Silhouette.create!(neutral_silhouette: "oval",
                           combined_silhouette: nil,
                           description:
@@ -101,7 +115,8 @@ oval = Silhouette.create!(neutral_silhouette: "oval",
                             giving a barrel-like impression from your shoulders to your hips</li>
                            </ul>",
                           category: "The Wide-Waisted Silhouette")
-
+oval.photo.attach(io: file, filename: "f", content_type: "image/png")
+oval.save
 
 #
 

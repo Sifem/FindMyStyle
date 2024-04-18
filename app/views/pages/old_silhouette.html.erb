@@ -1,0 +1,74 @@
+<div class="card-select text-center">
+<h1>Pick your silhouette match!</h1>
+</div>
+
+<div class="container-silhouettes-select">
+    <div class="row g-3">
+
+        <div class="col-4" data-id="<%= Silhouette.where(neutral_silhouette: "rectangle").first.id %>">
+          <div class="card-silhouette-select bg-light">
+            <div class="symbol-info d-flex justify-content-center align-items-center">
+              <%= image_tag "solid_rec.png", class: "img-symbol" %>
+              <span><strong>Rectangle</strong></span>
+            </div>
+            <div><%= image_tag "singl_rect_over.png", class: "img-body" %></div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card-silhouette-select bg-light">
+              <div class="symbol-info d-flex justify-content-between align-items-center">
+              <%= image_tag "solid_oval.png", class: "img-symbol" %>
+              <span><strong>Oval</strong></span>
+            </div>
+            <div><%= image_tag "singl_circle_over.png", class: "img-body" %></div>
+          </div>
+          </div>
+        </div>
+        <div class="row g-3">
+        <div class="col-4">
+          <div class="card-silhouette-select bg-light">
+              <div class="symbol-info d-flex justify-content-between align-items-center">
+              <%= image_tag "solid_eight.png", class: "img-symbol" %>
+              <span><strong>Figure-Eight</strong></span>
+            </div>
+            <div><%= image_tag "singl_eight_over.png", class: "img-body" %></div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card-silhouette-select bg-light">
+            <div class="symbol-info d-flex justify-content-center align-items-center">
+              <%= image_tag "solid_hour.png", class: "img-symbol" %>
+              <span><strong>Hourglass</strong></span>
+            </div>
+            <div><%= image_tag "singl_hour_over.png", class: "img-body" %></div>
+          </div>
+        </div>
+        </div>
+         <div class="row g-3">
+        <div class="col-4">
+          <div class="card-silhouette-select bg-light">
+              <div class="symbol-info d-flex justify-content-between align-items-center">
+              <%= image_tag "solid_triang.png", class: "img-symbol" %>
+              <span><strong>Triangle</strong></span>
+            </div>
+            <div><%= image_tag "singl_triang_over.png", class: "img-body" %></div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card-silhouette-select bg-light">
+              <div class="symbol-info d-flex justify-content-between align-items-center">
+              <%= image_tag "solid_reverse.png", class: "img-symbol" %>
+              <span><strong>Inverted-Triangle</strong></span>
+            </div>
+            <div><%= image_tag "single_reverse_over.png", class: "img-body" %></div>
+          </div>
+        </div>
+        </div>
+        </div>
+         </div>
+    </div>
+
+
+
+<button class="select-button">Go to your Silhouette Match!</button>

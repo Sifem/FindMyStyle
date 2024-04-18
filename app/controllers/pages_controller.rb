@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def select_silhouette
-    @silhouettes = Silhouette.all
+    @silhouettes = Silhouette.where(combined_silhouette: nil)
   end
 
   def find_my_style
