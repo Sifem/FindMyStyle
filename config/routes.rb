@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
+  resources :users do
+    resources :recommendations, only: :index
+  end
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -9,7 +13,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-
   # post "select" => "user_silhouettes#select", as: :select
   # get "generate" => "user_silhouettes#generate", as: :generate
   # patch "twosilhouettes" => "user_silhouettes#upload_back_photo", as: :upload_photo
