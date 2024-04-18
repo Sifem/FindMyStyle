@@ -22,10 +22,6 @@ h3 {
     box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
   }
 
-  .card-image {
-    position: relative;
-}
-
   .small-image {
     position: absolute;
     left: 0%;
@@ -34,9 +30,7 @@ h3 {
   }
 
   .img-fluid {
-    max-width: 10;
     height: 130%;
 }
 
   }
-
