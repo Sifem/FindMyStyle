@@ -18,9 +18,13 @@ Rails.application.routes.draw do
   # patch "twosilhouettes" => "user_silhouettes#upload_back_photo", as: :upload_photo
   # post "process_payment" => "users#process_payment", as: :process_payment
   # get "payment" => "users#payment", as: :payment
-  resources :silhouettes, only: %i[show index]
+  resources :silhouettes, only: %i[show index ]
+  # resources :user_silhouettes, only: %i[create ]
 
   get "select_silhouette", to: "pages#select_silhouette"
+
+  get "style_profile", to: "pages#style_profile"
+  post "user_silhouettes/:id", to: "user_silhouettes#create", as: :new_silhouette
 
 
   get "find_my_style", to: "pages#find_my_style"

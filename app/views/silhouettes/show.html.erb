@@ -1,13 +1,13 @@
-
-<div class= "container silhouette-card">
+<div class="show-container">
   <div class= "silhouette-category">
     <%= @silhouette.category %>
   </div>
 
+<div class= "container silhouette-card">
 
   <div class= "silhouette-graphic-description d-flex">
     <div class= "col-2">
-      <%= image_tag('eight_overlap (1).png', alt: 'rectangle',class: 'img-fluid small-image') %>
+      <%= cl_image_tag @silhouette.photo.key, class: 'img-fluid small-image' %>
     </div>
     <div class= "col-10 ps-2">
       <h1><%= @silhouette.neutral_silhouette.upcase %></h1>
@@ -21,5 +21,11 @@
     <div class="no-patience ">
       <%= raw @silhouette.description%>
     </div>
+<button><%= link_to "See your recommendations!",   user_recommendations_path(current_user.id), class:"text-decoration-none text-dark" %></button>
   </div>
+</div>
+
+<div class= "footer-pic d-flex justify-content-end">
+<%= cl_image_tag @silhouette.photo.key, class: "img-body" %>
+</div>
 </div>

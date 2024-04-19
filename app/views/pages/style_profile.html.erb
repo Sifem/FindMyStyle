@@ -1,0 +1,58 @@
+<div class="box-profile">
+    <div id="overlay">
+      <div class="image-profile">
+        <div class="trick">
+
+        </div>
+      </div>
+      <ul class="text">Hi <%= current_user.full_name.capitalize %> </ul>
+      <div class="text1">Your Silhouette is <%= current_user.silhouettes.first.neutral_silhouette.capitalize %></div>
+
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading " role="tab" id="headingOne">
+      <h4 class="panel-title ">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="" aria-controls="collapseOne">
+          <div class="title  btn btn-danger btn-outline btn-lg">RECOMMENDATIONS</div>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Walter has been building websites for years. He enjoys making unique websites and web projects. His hobbies include photography, woodworking, leatherworking, fishing, and mid century modern furniture.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+
+<% @recommendations.each do |recommendation| %>
+  <div class="cards">
+    <article class="information [ card ]">
+      <h2 class="title"><%= recommendation.item %></h2>
+      <p class="info"><%= recommendation.description %></p>
+      <dl class="details">
+        <div>
+          <dt><%= recommendation.body_part %></dt>
+          <dd>Body Part</dd>
+        </div>
+        <div>
+          <dt><%= recommendation.function %></dt>
+          <dd>Function</dd>
+        </div>
+      </dl>
+      <button class="button">
+        <span>Learn more</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
+        </svg>
+      </button>
+    </article>
+  </div>
+ <% end %>

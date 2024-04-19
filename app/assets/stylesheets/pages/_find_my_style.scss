@@ -2,8 +2,11 @@
 .landing-container {
   // display: flex;
   text-align: center;
-  background: rgb(230,252,255);
-  background: linear-gradient(90deg, rgba(230,252,255,0.4290091036414566) 0%, rgba(144,244,255,0.3981967787114846) 100%);
+  // background: rgb(230,252,255);
+  // background: linear-gradient(90deg, rgba(230,252,255,0.4290091036414566) 0%, rgba(144,244,255,0.3981967787114846) 100%);
+  background: rgb(213,217,218);
+  background: linear-gradient(90deg, rgba(213,217,218,0.4290091036414566) 0%, rgba(145,148,148,0.165703781512605) 100%);
+  background:linear-gradient(90deg, #ffffff72 0%, rgba(253, 253, 253, 0.482) 50%), url(multiple_silhouettes_grey.jpg);
   padding: 30px ;
   height: 100vh;
 
