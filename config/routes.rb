@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   # resources :user_silhouettes, only: %i[create ]
 
   get "select_silhouette", to: "pages#select_silhouette"
+
+  get "style_profile", to: "pages#style_profile"
   post "user_silhouettes/:id", to: "user_silhouettes#create", as: :new_silhouette
+
 
   get "find_my_style", to: "pages#find_my_style"
   get "home", to: "pages#home"

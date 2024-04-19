@@ -11,4 +11,8 @@ class PagesController < ApplicationController
 
   def find_my_style
   end
+
+  def style_profile
+    @recommendations = current_user.silhouettes.first.recommendations
+  end
 end
