@@ -165,7 +165,7 @@ sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrec
                           body_part: "Waist",
                           function: "Emphasize",
                           item: "Belted Dress",
-                          silhouette_id: figure_eight.id
+                          silhouette_id: eight.id
                         )
                         Recommendation.create!(
                           description: "A flared peplum jacket that enhances the hourglass silhouette by emphasizing the waist.",

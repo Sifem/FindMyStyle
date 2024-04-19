@@ -19,7 +19,9 @@ h3 {
 .grid-container {
   .card {
     border-radius: 10px;
-    box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+    &:hover {
+      box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+    }
   }
 
   .small-image {

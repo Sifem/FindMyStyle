@@ -72,3 +72,32 @@
 
 
 <button class="select-button">Go to your Silhouette Match!</button>
+
+
+
+<%= link_to "Go to your Silhouette Match!", user_silhouettes_path, method: "post", data: {action: "click->select-silhouette#submit"}, class:"select-button"%>
+<%= simple_form_for(@user_silhouette) do |f| %>
+  <%= f.submit "Go to your Silhouette Match!"  %>
+<% end %>
+
+
+
+
+          <div class="select-grid">
+            <div class="row g-3 col-12">
+            <%= simple_form_for(@user_silhouette) do |f|%>
+            <% @silhouettes.each do |silhouette|  %>
+            <div data-action="click->select-silhouette#select" data-id="<%=silhouette.id %>" class="d-flex justify-content-around col-4">
+              <div class="card-silhouette-select bg-light ">
+               <%= f.radio_button :silhouette_id, silhouette.id do %>
+                  <span><strong><%=silhouette.neutral_silhouette%></strong></span>
+                  <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", class: "img-symbol" %>
+                  <div><%= cl_image_tag silhouette.photo.key, class: "img-body" %></div>
+                <% end %>
+              </div>
+            </div>
+            <% end  %>
+            </div>
+          </div>
+             <%= f.submit "Go to your Silhouette Match!"%>
+              <% end %>
