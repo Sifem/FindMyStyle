@@ -21,5 +21,6 @@
     <div class="no-patience ">
       <%= raw @silhouette.description%>
     </div>
+<button><%= link_to "See your recommendations!",   user_recommendations_path(current_user.id), class:"text-decoration-none text-dark" %></button>
   </div>
 </div>
