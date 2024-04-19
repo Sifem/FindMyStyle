@@ -28,7 +28,7 @@ irene = User.create!(email: 'irene@gmail.com', password: '123456', full_name: 'i
 sifem = User.create!(email: 'sifem@gmail.com', password: '123456', full_name: 'sifem', payment: true)
 sylvia = User.create!(email: 'sylvia@gmail.com', password: '123456', full_name: 'sylvia', payment: true)
 
-file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_rect_over.png")
+file = File.open("app/assets/images/singl_rect_over.png")
 rectangle = Silhouette.new(neutral_silhouette: "rectangle",
                                combined_silhouette: nil,
                                description:
@@ -53,7 +53,7 @@ rectangle = Silhouette.new(neutral_silhouette: "rectangle",
 rectangle.photo.attach(io: file, filename: "a", content_type: "image/png")
 rectangle.save
 
-file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_hour_over.png")
+file = File.open("app/assets/images/singl_hour_over.png")
 hourglass = Silhouette.new(neutral_silhouette: "hourglass",
                               combined_silhouette: nil,
                               description:
@@ -67,7 +67,7 @@ hourglass.photo.attach(io: file, filename: "b", content_type: "image/png")
 hourglass.save
 
 
-file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_eight_over.png")
+file = File.open("app/assets/images/singl_eight_over.png")
 eight = Silhouette.new(neutral_silhouette: "eight",
                            combined_silhouette: nil,
                            description:
@@ -80,7 +80,7 @@ eight = Silhouette.new(neutral_silhouette: "eight",
 eight.photo.attach(io: file, filename: "c", content_type: "image/png")
 eight.save
 
-file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/single_reverse_over.png")
+file = File.open("app/assets/images/single_reverse_over.png")
 inverted_triangle = Silhouette.new(neutral_silhouette: "inverted triangle",
                                        combined_silhouette: nil,
                                        description:
@@ -91,7 +91,7 @@ inverted_triangle = Silhouette.new(neutral_silhouette: "inverted triangle",
 inverted_triangle.photo.attach(io: file, filename: "d", content_type: "image/png")
 inverted_triangle.save
 
-file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_triang_over.png")
+file = File.open("app/assets/images/singl_triang_over.png")
 triangle = Silhouette.new(neutral_silhouette: "triangle",
                               combined_silhouette: nil,
                               description:
@@ -102,7 +102,7 @@ triangle = Silhouette.new(neutral_silhouette: "triangle",
 triangle.photo.attach(io: file, filename: "e", content_type: "image/png")
 triangle.save
 
-file = File.open("/home/kenna/code/Sifem/FindMyStyle/app/assets/images/singl_circle_over.png")
+file = File.open("app/assets/images/singl_circle_over.png")
 oval = Silhouette.new(neutral_silhouette: "oval",
                           combined_silhouette: nil,
                           description:
@@ -165,7 +165,7 @@ sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrec
                           body_part: "Waist",
                           function: "Emphasize",
                           item: "Belted Dress",
-                          silhouette_id: figure_eight.id
+                          silhouette_id: eight.id
                         )
                         Recommendation.create!(
                           description: "A flared peplum jacket that enhances the hourglass silhouette by emphasizing the waist.",
