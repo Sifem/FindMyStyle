@@ -1,6 +1,17 @@
+.show-container {
+  background: rgb(213,217,218);
+  background: linear-gradient(90deg, rgba(213,217,218,0.4290091036414566) 0%, rgba(145,148,148,0.165703781512605) 100%);
+  background:linear-gradient(90deg, #ffffff72 0%, rgba(253, 253, 253, 0.482) 50%), url(multiple_silhouettes_grey.jpg);
+  padding: 30px;
+}
+
 .silhouette-card {
-  padding: 20px;
-  height: 100vh;
+  height: 70vh;
+  border-radius: 4.8px;
+  box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+  border-style: hidden;
+  background-color:#fcf9f3;
+
 }
 
 .silhouette-category {
@@ -8,17 +19,18 @@
   padding: 5px;
   border-radius: 4px;
   text-align: center;
+  border-radius: 4.8px;
+  box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+  border-style: hidden;
+  margin-bottom: 50px;
 }
 
 .silhouette-graphic-description {
   display: flex;
   justify-content: space-around;
-  margin: 30px;
-  }
+  margin: 10px;
+  padding: 20px 10px;
 
-.silhouette-graphic-descrption h1 {
-    font-size: larger;
-    font-weight: bolder;
   }
 
 .silhouette-graphic-description h2 {
@@ -27,15 +39,15 @@
 
 .silhouette-text-description {
   display: flex;
-  height: 70vh;
+  height: 50vh;
   align-items: center;
-}
+  margin-top: 20px;}
 
 .silhouette-text-description ul {
  list-style-type: none;
 }
 
 .silhouette-text-description li i {
-  color: $new-violet;
+  color: $new-dark-blue;
   margin-right: 10px;
 }

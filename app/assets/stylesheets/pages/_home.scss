@@ -1,13 +1,47 @@
 // Specific CSS for your home-page
 .home-container {
-  // height: 100vh;
+height: 100vh;
+padding: 30px;
 // background: rgb(255,206,88);
 // background: linear-gradient(90deg, rgba(255,206,88,1) 0%, rgba(162,88,255,1) 50%, rgba(95,239,255,0.3981967787114846) 100%);
 // padding: 30px ;
-
-background-repeat: repeat;
- image {
-  height: 100vh;
-
+background:linear-gradient(90deg, hsla(0, 0%, 100%, 0.447) 0%, rgba(248, 244, 244, 0.482) 50%), url(multiple_silhouettes_grey.jpg);
+background-size: cover;
+display: flex;
+justify-content: space-around;
+flex-direction: column;
 }
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  p {
+    text-align: right;
+    margin-bottom: 40px;
+  }
+}
+
+
+.discover-shape {
+  background-color: $new-pink;
+  border-radius: 4.8px;
+  box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+  border-style: hidden;
+  padding: 10px;
+
+  .btn {
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+  }
+}
+
+.title {
+  margin-bottom: 7.5rem;
+  margin-top: 40px;
+  text-align: center;
+  text-shadow: 4px 2px 5px #828080;
+  color: #444444;
 }
