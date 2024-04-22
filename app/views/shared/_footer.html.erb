@@ -1,9 +1,26 @@
-<footer class="footer mt-auto py-3 bg-light">
+<%# <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <span class="text-muted">© <%= Date.current.year %> Find My Style. All rights reserved.</span>
+        <span class="text-muted">© <%= Date.current.year Find My Style. All rights reserved.</span>
       </div>
     </div>
   </div>
-</footer>
+</footer> %>
+
+
+
+
+<ul class="footer-links fs-1 p-2 m-0 d-flex gap-5 list-unstyled justify-content-center w-100">
+
+  <%# Home %>
+  <li>
+    <%= link_to root_path, class: 'icon' do %><i class="fa-solid fa-house"></i><% end %>
+  </li>
+
+
+    <%# Profile %>
+
+    <li>
+    <%= link_to style_profile_path, class: 'icon' do %><i class="fa-solid fa-user"></i><% end %>
+  </li>

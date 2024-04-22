@@ -2,30 +2,24 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="select-silhouette"
 export default class extends Controller {
+  static targets = ["silhouetteCard", "inputId"]
   connect() {
-    console.log("working")
+    console.log("working");
+
   }
 
   select(event) {
-    console.log("clicked")
-    console.log(event.currentTarget.dataset.id)
-  }
-
-  submit(event) {
-    event.preventDefault()
-    console.log("ya")
-    console.log(event.currentTarget.href)
-    const url = `${event.currentTarget.href}`
-    const params = {
-      id: 117
-    };
-
-   fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(params)
-    })
+    // const cards = this.element.querySelectorAll('.card');
+    // cards.forEach(card => {
+    //   card.classList.remove("active")
+    // });
+    this.silhouetteCardTargets.forEach(card => {
+        card.classList.remove("active")
+      });
+    console.log("clicked");
+    console.log(event.currentTarget.dataset.id);
+    event.currentTarget.classList.toggle("active")
+    this.inputIdTarget.value = event.currentTarget.dataset.id
+    console.log(this.inputIdTarget.value)
   }
 }
