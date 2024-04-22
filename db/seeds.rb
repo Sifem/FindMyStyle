@@ -210,4 +210,29 @@ sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrec
                           item: "Peplum Top",
                           silhouette_id: rectangle.id
                         )
+                        # Recommendations to transition silhouette
+
+                        Recommendation.create!(
+                          description: "Round the shoulders in a chemise-style dress",
+                          body_part: "Shoulders",
+                          function: "Ovalize",
+                          item: "Chemise-style dress",
+                          silhouette_id: rectangle.id
+                        )
+
+                        Recommendation.create!(
+                          description: "second",
+                          body_part: "Shoulders",
+                          function: "Ovalize",
+                          item: "Chemise-style dress",
+                          silhouette_id: rectangle.id
+                        )
+
+                        Recommendation.create!(
+                          description: "Drop straigth seams from the shoulders to the hem. Don't accent waist",
+                          body_part: "Waist",
+                          function: "Add volume",
+                          item: "Dress",
+                          silhouette_id: eight.id
+                        )
                         puts "Recommendations for Rectangle Silhouette added successfully!"
