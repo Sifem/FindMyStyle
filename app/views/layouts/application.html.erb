@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <div class="page-container">
-      <div class="navbar-container"><%= render "shared/navbar" %></div>
-      <div class="content-container"><%= yield %></div>
-      <div class="footer-container d-flex justify-content-center sticky-bottom bg-white w-100"><%= render "shared/footer" %></div>
+        <div class="navbar-container"><%= render "shared/navbar" %></div>
+            <%= render "shared/flashes" %>
+        <div class="content-container"><%= yield %></div>
+          <div class="footer-container d-flex justify-content-center sticky-bottom bg-white w-100"><%= render "shared/footer" %></div>
     </div>
   </body>
 </html>
