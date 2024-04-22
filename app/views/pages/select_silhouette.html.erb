@@ -1,23 +1,24 @@
 <div data-controller="select-silhouette" class="select-container">
-<div class="card-select  text-center">
-<h1>Pick your silhouette match!</h1>
-</div>
+  <div class="card-select  text-center">
+    <h1>Pick your silhouette match!</h1>
+  </div>
 
 
-          <div class="select-grid">
-            <div class="row g-3 col-12">
-              <% @silhouettes.each do |silhouette|  %>
-                <div data-action="click->select-silhouette#select" data-id="<%=silhouette.id %>" class="d-flex justify-content-around col-4">
-                  <div class="card-silhouette-select bg-light ">
-                    <%= link_to new_silhouette_path(silhouette), data: {turbo_method: :post}, class:"text-decoration-none text-dark"  do %>
-                    <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", class: "img-symbol" %>
-                  <div><%= cl_image_tag silhouette.photo.key, class: "img-body" %></div>
-                      <span><%= silhouette.neutral_silhouette %></span>
-              <% end  %>
-            </div>
+  <div class="select-grid">
+    <div  class="row g-3 col-12">
+      <% @silhouettes.each do |silhouette|  %>
+        <div data-select-silhouette-target="silhouetteCard" data-action="click->select-silhouette#select" data-id="<%=silhouette.id %>" class="d-flex card justify-content-around col-4">
+          <div class="card-silhouette-select bg-light">
+            <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", class: "img-symbol" %>
+            <div><%= cl_image_tag silhouette.photo.key, class: "img-body" %></div>
+            <span><%= silhouette.neutral_silhouette %></span>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+    <%= simple_form_for(@user_silhouette) do |f| %>
+      <%= f.input :silhouette_id, as: :hidden, input_html: { data: {select_silhouette_target:  "inputId" } } %>
+      <%= f.submit "Go to your Silhouette Match!"  %>
+    <% end %>
     </div>
   </div>
-              <%# <span><strong><%=link_to silhouette.neutral_silhouette, new_silhouette_path(silhouette), data: {turbo_method: :post}, class:"text-decoration-none text-dark"%>
+</div>
