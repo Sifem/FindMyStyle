@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_22_142128) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_22_151756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,13 +47,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_142128) do
     t.string "body_part"
     t.string "function"
     t.string "item"
-    t.bigint "silhouette_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["silhouette_id"], name: "index_recommendations_on_silhouette_id"
+    t.string "exchangeable_type", null: false
+    t.bigint "exchangeable_id", null: false
+    t.index ["exchangeable_type", "exchangeable_id"], name: "index_recommendations_on_exchangeable"
   end
 
-  create_table "silhouettes", force: :cascade do |t|
+  create_table "silhouettes", force: :cascade do |t|s
     t.string "neutral_silhouette"
     t.string "combined_silhouette"
     t.datetime "created_at", null: false
@@ -95,7 +96,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_142128) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "recommendations", "silhouettes"
   add_foreign_key "transitions", "silhouettes"
   add_foreign_key "user_silhouettes", "silhouettes"
   add_foreign_key "user_silhouettes", "users"
