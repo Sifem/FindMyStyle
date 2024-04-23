@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :silhouettes, through: :user_silhouettes
+  has_many :bookmarks
+  has_many :recommendations, through: :bookmarks
 end

@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
+
   resources :users do
     resources :recommendations, only: :index
+    resources :bookmarks, only: [:index, :create]
   end
+  resources :bookmark, only: :destroy
+  resources :recommendations, only: [:show]
+
   root to: "pages#home"
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -28,5 +36,6 @@ Rails.application.routes.draw do
 
   get "find_my_style", to: "pages#find_my_style"
   get "home", to: "pages#home"
+  get '/my_bookmarks', to: 'bookmarks#index', as: 'my_bookmarks'
 
 end
