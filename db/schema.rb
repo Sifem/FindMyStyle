@@ -56,19 +56,28 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_154032) do
     t.string "body_part"
     t.string "function"
     t.string "item"
-    t.bigint "silhouette_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["silhouette_id"], name: "index_recommendations_on_silhouette_id"
+    t.string "exchangeable_type", null: false
+    t.bigint "exchangeable_id", null: false
+    t.index ["exchangeable_type", "exchangeable_id"], name: "index_recommendations_on_exchangeable"
   end
 
-  create_table "silhouettes", force: :cascade do |t|
+  create_table "silhouettes", force: :cascade do |t|s
     t.string "neutral_silhouette"
     t.string "combined_silhouette"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
     t.string "category"
+  end
+
+  create_table "transitions", force: :cascade do |t|
+    t.bigint "silhouette_id", null: false
+    t.string "goal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["silhouette_id"], name: "index_transitions_on_silhouette_id"
   end
 
   create_table "user_silhouettes", force: :cascade do |t|
@@ -99,6 +108,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_154032) do
   add_foreign_key "bookmarks", "recommendations"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "recommendations", "silhouettes"
+  add_foreign_key "transitions", "silhouettes"
   add_foreign_key "user_silhouettes", "silhouettes"
   add_foreign_key "user_silhouettes", "users"
 end

@@ -101,3 +101,11 @@
           </div>
              <%= f.submit "Go to your Silhouette Match!"%>
               <% end %>
+
+
+
+        <%= link_to new_silhouette_path(silhouette), data: {turbo_method: :post}, class:"text-decoration-none text-dark"  do %>
+                    <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", class: "img-symbol" %>
+                  <div><%= cl_image_tag silhouette.photo.key, class: "img-body" %></div>
+                      <span><%= silhouette.neutral_silhouette %></span>
+              <% end  %>

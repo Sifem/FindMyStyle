@@ -9,4 +9,9 @@ class RecommendationsController < ApplicationController
   def show
     @recommendation = Recommendation.find(params[:id])
   end
+  
+#   def transition
+#     @silhouette = current.user.silhouettes.first
+#     @recommendations = Recommendation.where("transition LIKE ?", "%#{query}%")
+#   end
 end

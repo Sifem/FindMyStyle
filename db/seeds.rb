@@ -12,6 +12,7 @@ silhouettes = Silhouette.where(combined_silhouette: nil)
 silhouettes.each { |silhouette| silhouette.photo.purge }
 Recommendation.destroy_all
 UserSilhouette.destroy_all
+Transition.destroy_all
 Silhouette.destroy_all
 User.destroy_all
 # User_shiloutte.destroy_all
@@ -153,61 +154,121 @@ sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrec
 #                         function: "upper volume",
 #                         item: "jacket")
 
-                        Recommendation.create!(
-                          description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
-                          body_part: "Waist",
-                          function: "Contour",
-                          item: "Side-Seamed Jacket",
-                          silhouette_id: oval.id
-                        )
-                        Recommendation.create!(
-                          description: "A belted dress that emphasizes the waist and follows the body's natural curves.",
-                          body_part: "Waist",
-                          function: "Emphasize",
-                          item: "Belted Dress",
-                          silhouette_id: eight.id
-                        )
-                        Recommendation.create!(
-                          description: "A flared peplum jacket that enhances the hourglass silhouette by emphasizing the waist.",
-                          body_part: "Waist",
-                          function: "Highlight",
-                          item: "Flared Peplum Jacket",
-                          silhouette_id: hourglass.id
-                        )
-                        Recommendation.create!(
-                          description: "A full skirt to balance the narrower upper body of the triangle silhouette.",
-                          body_part: "Hips",
-                          function: "Balance",
-                          item: "Full Skirt",
-                          silhouette_id: triangle.id
-                        )
-                        Recommendation.create!(
-                          description: "A peplum top to add volume to the hips and balance the broader shoulders of the inverted triangle silhouette.",
-                          body_part: "Hips",
-                          function: "Widen",
-                          item: "Peplum Top",
-                          silhouette_id: inverted_triangle.id
-                        )
+Recommendation.create!(description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
+                       body_part: "Waist",
+                       function: "Contour",
+                       item: "Side-Seamed Jacket",
+                       exchangeable: oval
+                      )
+Recommendation.create!(description: "A belted dress that emphasizes the waist and follows the body's natural curves.",
+                       body_part: "Waist",
+                       function: "Emphasize",
+                       item: "Belted Dress",
+                       exchangeable: eight
+                      )
+Recommendation.create!(description: "A flared peplum jacket that enhances the hourglass silhouette by emphasizing the waist.",
+                       body_part: "Waist",
+                       function: "Highlight",
+                       item: "Flared Peplum Jacket",
+                       exchangeable: hourglass
+                      )
+Recommendation.create!(description: "A full skirt to balance the narrower upper body of the triangle silhouette.",
+                       body_part: "Hips",
+                       function: "Balance",
+                       item: "Full Skirt",
+                       exchangeable: triangle
+                      )
+Recommendation.create!(description: "A peplum top to add volume to the hips and balance the broader shoulders of the inverted triangle silhouette.",
+                       body_part: "Hips",
+                       function: "Widen",
+                       item: "Peplum Top",
+                       exchangeable: inverted_triangle
+                      )
+
                         # Create Recommendations for Rectangle Silhouette
-                        Recommendation.create!(
-                          description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
-                          body_part: "Core",
-                          function: "Enhance Shape",
-                          item: "Belted Coat",
-                          silhouette_id: rectangle.id
-                        )
-                        Recommendation.create!(
-                          description: "Emphasize your waist with a stylish high-waisted skirt. The raised waistline draws the eye upward, creating the appearance of a narrower waist and providing a flattering division between your upper and lower body. Choose a skirt with subtle pleating or a flare to add volume and balance to your rectangle silhouette.",
-                          body_part: "Waist",
-                          function: "Accentuate",
-                          item: "High-waisted Skirt",
-                          silhouette_id: rectangle.id
-                        )
-                        Recommendation.create!(
-                          description: "Enhance your rectangle silhouette by adding some volume to your hips with a peplum top. The flared ruffle at the waist creates a more pronounced hip area, balancing your silhouette and giving the illusion of curves. This top is particularly effective for creating a more feminine shape, ideal for those with a more linear body type like the rectangle silhouette.",
-                          body_part: "Hips",
-                          function: "Add Volume",
-                          item: "Peplum Top",
-                          silhouette_id: rectangle.id
-                        )
-                        puts "Recommendations for Rectangle Silhouette added successfully!"
+
+Recommendation.create!(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+                       body_part: "Core",
+                       function: "Enhance Shape",
+                       item: "Belted Coat",
+                       exchangeable: rectangle
+                      )
+Recommendation.create!(description: "Emphasize your waist with a stylish high-waisted skirt. The raised waistline draws the eye upward, creating the appearance of a narrower waist and providing a flattering division between your upper and lower body. Choose a skirt with subtle pleating or a flare to add volume and balance to your rectangle silhouette.",
+                       body_part: "Waist",
+                       function: "Accentuate",
+                       item: "High-waisted Skirt",
+                       exchangeable: rectangle
+                      )
+
+Recommendation.create!(description: "Enhance your rectangle silhouette by adding some volume to your hips with a peplum top. The flared ruffle at the waist creates a more pronounced hip area, balancing your silhouette and giving the illusion of curves. This top is particularly effective for creating a more feminine shape, ideal for those with a more linear body type like the rectangle silhouette.",
+                       body_part: "Hips",
+                       function: "Add Volume",
+                       item: "Peplum Top",
+                       exchangeable: rectangle
+                      )
+                        # Recommendations to transition silhouette
+
+
+# Transitions
+
+trans1 = Transition.create!(silhouette_id: rectangle.id, goal: "oval")
+trans2 = Transition.create!(silhouette_id: rectangle.id, goal: "eight")
+trans3 = Transition.create!(silhouette_id: rectangle.id, goal: "hourglass")
+Transition.create!(silhouette_id: rectangle.id, goal: "triangle")
+Transition.create!(silhouette_id: rectangle.id, goal: "inverted triangle")
+
+Transition.create!(silhouette_id: oval.id, goal: "rectangle")
+Transition.create!(silhouette_id: oval.id, goal: "hourglass")
+Transition.create!(silhouette_id: oval.id, goal: "triangle")
+Transition.create!(silhouette_id: oval.id, goal: "inverted triangle")
+
+Transition.create!(silhouette_id: eight.id, goal: "rectangle")
+Transition.create!(silhouette_id: eight.id, goal: "oval")
+Transition.create!(silhouette_id: eight.id, goal: "hourglass")
+Transition.create!(silhouette_id: eight.id, goal: "triangle")
+Transition.create!(silhouette_id: eight.id, goal: "inverted triangle")
+
+Transition.create!(silhouette_id: hourglass.id, goal: "rectangle")
+Transition.create!(silhouette_id: hourglass.id, goal: "oval")
+Transition.create!(silhouette_id: hourglass.id, goal: "eight")
+Transition.create!(silhouette_id: hourglass.id, goal: "triangle")
+Transition.create!(silhouette_id: hourglass.id, goal: "inverted triangle")
+
+Transition.create!(silhouette_id: triangle.id, goal: "rectangle")
+Transition.create!(silhouette_id: triangle.id, goal: "oval")
+Transition.create!(silhouette_id: triangle.id, goal: "eight")
+Transition.create!(silhouette_id: triangle.id, goal: "hourglass")
+
+Transition.create!(silhouette_id: inverted_triangle.id, goal: "rectangle")
+Transition.create!(silhouette_id: inverted_triangle.id, goal: "oval")
+Transition.create!(silhouette_id: inverted_triangle.id, goal: "eight")
+Transition.create!(silhouette_id: inverted_triangle.id, goal: "hourglass")
+Transition.create!(silhouette_id: inverted_triangle.id, goal: "triangle")
+
+
+
+Recommendation.create!(
+  description: "Round the shoulders in a chemise-style dress",
+  body_part: "Shoulders",
+  function: "Ovalize",
+  item: "Chemise-style dress",
+  exchangeable: trans1
+)
+
+Recommendation.create!(
+  description: "second",
+  body_part: "Shoulders",
+  function: "Ovalize",
+  item: "Chemise-style dress",
+  exchangeable: trans2
+)
+
+Recommendation.create!(
+  description: "Drop straigth seams from the shoulders to the hem. Don't accent waist",
+  body_part: "Waist",
+  function: "Add volume",
+  item: "Dress",
+  exchangeable: trans3
+)
+
+puts "Database updated successfully!"
