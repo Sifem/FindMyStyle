@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "open-uri"
-silhouettes = Silhouette.where(combined_silhouette: nil)
-silhouettes.each { |silhouette| silhouette.photo.purge }
+# silhouettes = Silhouette.where(combined_silhouette: nil)
+# silhouettes.each { |silhouette| silhouette.photo.purge }
 Recommendation.destroy_all
 UserSilhouette.destroy_all
 Transition.destroy_all
