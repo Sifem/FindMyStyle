@@ -1,0 +1,21 @@
+<div class="container chatroom">
+  <h1>AI Stylist</h1>
+
+  <div class="messages">
+    <%  %>
+      <div >  <% if !@response %>
+      <small><%= @greeting %></small>
+              <% else %>
+          <strong>Answer: <%= @response  %></strong>
+        <small><% end %>
+          <strong></strong>
+          <i></i>
+        </small>
+        <%= simple_form_for @message, url: ai_stylist_message_path do |f| %>
+          <%= f.input :content, label: "Ask something"  %>
+          <%= f.submit "Submit review", class: "btn btn-primary" %>
+        <% end %>
+
+      </div>
+  </div>
+</div>
