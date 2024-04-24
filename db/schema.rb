@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_151756) do
     t.index ["exchangeable_type", "exchangeable_id"], name: "index_recommendations_on_exchangeable"
   end
 
-  create_table "silhouettes", force: :cascade do |t|s
+  create_table "silhouettes", force: :cascade do |t|
     t.string "neutral_silhouette"
     t.string "combined_silhouette"
     t.datetime "created_at", null: false

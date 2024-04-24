@@ -15,4 +15,9 @@ class PagesController < ApplicationController
   def style_profile
     @recommendations = current_user.silhouettes.first.recommendations
   end
+
+  def style_transition
+    @silhouette = current_user.silhouettes.first
+    @transitions = @silhouette.transitions
+  end
 end

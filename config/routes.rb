@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "select_silhouette", to: "pages#select_silhouette"
 
   get "style_profile", to: "pages#style_profile"
+  get "style_transition", to: "pages#style_transition"
 
 
   get "find_my_style", to: "pages#find_my_style"
