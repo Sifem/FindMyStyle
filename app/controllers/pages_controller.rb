@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
+  require "openai"
   skip_before_action :authenticate_user!, only: [:home, :find_my_style ]
-
   def home
   end
 
@@ -10,6 +10,10 @@ class PagesController < ApplicationController
   end
 
   def find_my_style
+  end
+
+  def new
+    @message = Message.new
   end
 
   def style_profile
