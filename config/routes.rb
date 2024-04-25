@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :recommendations, only: :index
     resources :bookmarks, only: [:index, :create]
   end
-  resources :bookmark, only: :destroy
+  resources :bookmarks, only: :destroy
   resources :recommendations, only: [:show]
 
   root to: "pages#home"

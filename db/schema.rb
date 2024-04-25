@@ -121,7 +121,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_24_095456) do
 
   add_foreign_key "bookmarks", "recommendations"
   add_foreign_key "bookmarks", "users"
-
   add_foreign_key "transitions", "silhouettes"
   add_foreign_key "user_silhouettes", "silhouettes"
   add_foreign_key "user_silhouettes", "users"

@@ -130,10 +130,10 @@ invertedtriangleeight = Silhouette.create!(neutral_silhouette: "inverted_triangl
 
 #user_Silhouettes
 
-irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass.id)
-leesshape = UserSilhouette.create!(user_id: lee.id, silhouette_id: ovalinverted.id)
-sifemsshape = UserSilhouette.create!(user_id: sifem.id, silhouette_id: rectangle.id)
-sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrectangle.id)
+#irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass.id)
+#leesshape = UserSilhouette.create!(user_id: lee.id, silhouette_id: ovalinverted.id)
+#sifemsshape = UserSilhouette.create!(user_id: sifem.id, silhouette_id: rectangle.id)
+#sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrectangle.id)
 
 #recomendations
 
