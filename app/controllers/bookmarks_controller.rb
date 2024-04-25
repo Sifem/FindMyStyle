@@ -22,7 +22,6 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    raise
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
     redirect_to root_path, notice: "Bookmark removed successfully!"
