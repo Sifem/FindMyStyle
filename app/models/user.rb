@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :user_silhouettes
   has_many :silhouettes, through: :user_silhouettes
+
+  has_many :messages
+
   has_many :bookmarks
-  has_many :recommendations, through: :bookmarks
+
 end

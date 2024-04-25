@@ -7,7 +7,7 @@
 <div class="grid-container d-flex flex-column justify-content-center w-75 mx-auto g-3">
     <% @silhouettes.each do |silhouette| %>
   <%= link_to silhouette_path(silhouette), class:"text-decoration-none" do  %>
-    <div class="card" <%=silhouette.neutral_silhouette.gsub(" ","_")%> my-2 p-2">
+    <div class="card <%=silhouette.neutral_silhouette.gsub(" ","_")%> my-2 p-2">
       <%= cl_image_tag silhouette.photo.key, class: "img-fluid small-image" %>
     <%# <%= image_tag('eight_overlap (1).png', alt: 'rectangle',class: 'img-fluid small-image') %>
     The <%= silhouette.neutral_silhouette.upcase %>
