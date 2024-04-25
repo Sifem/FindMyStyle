@@ -1,5 +1,14 @@
+w
+
+<% if @recommendations.any? %>
+  <p>Recommendations are present!</p>
+<% else %>
+  <p>No recommendations found.</p>
+<% end %>
+
+
 <div class="container">
-<h1 style="margin-bottom: 200px;">Style recommendations are ready for <%= current_user.full_name.capitalize %></h1>
+<h1 style="margin-bottom: 200px;">Transitons recommendations for <%= current_user.silhouettes.last.neutral_silhouette.upcase %> to <%=@transition.goal.upcase %></h1>
 
  <% @recommendations.each do |recommendation| %>
   <div class="card recommendation">
@@ -15,7 +24,7 @@
           <dt><%= recommendation.function %></dt>
         </div>
       </dl>
-    
+
     </div>
     <div class="card-body">
       <div class="card-image">
