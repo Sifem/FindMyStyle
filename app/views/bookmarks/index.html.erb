@@ -1,0 +1,17 @@
+<div class="container">
+<h1> Top recommendations </h1>
+
+  <% @bookmarks.each do |bookmark| %>
+    <div class="card">
+      <div class="card-header">
+      </div>
+      <div class="card-body">
+        <h2 class="card-title"></h2>
+        <p class="card-text"></p>
+    <div>
+      <%= link_to bookmark.recommendation.item, recommendation_path(bookmark.recommendation) %>
+      <%= link_to "Remove Bookmark", bookmark_path(current_user, bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+      </div>
+    </div>
+  <% end %>

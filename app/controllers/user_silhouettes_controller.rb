@@ -7,7 +7,7 @@ class UserSilhouettesController < ApplicationController
       @user_silhouette.save
       redirect_to silhouette_path(@silhouette)
     else
-      redirect_to select_silhouette_path
+      redirect_to silhouette_path(current_user.silhouettes.last)
       flash.alert = "Silhoette already assigned to user"
     end
   end

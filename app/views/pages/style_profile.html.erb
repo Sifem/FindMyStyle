@@ -13,6 +13,7 @@
 
     <div class="card-silhouette-profile d-flex">
      <div class="row">
+
         <div class="col-6">
           <%= render "shared/general_card_silhouette" %>
         </div>
@@ -31,6 +32,16 @@
             </div>
         </div>
         </div>
+
+
+          <div class="img-silhouette d-flex align-items-center justify-content-center text-center">
+            <p class="m-0">
+              <%= current_user.bookmarks.count %> <br> Recommendations
+            </p>
+          </div>
+      </div>
+</div>
+
       </div>
     </div>
 
@@ -39,7 +50,7 @@
 
 
 <div class="card=buttons d-flex flex-column justify-content-center p-5">
-    <p>Discover more in the below sections to build your personal style</p>
+    <p class="text-profile" >Discover more in the below sections to build your personal style</p>
 
     <div class="card-profile-buttons row">
       <%= link_to "Recommendations", user_recommendations_path(current_user), class: "profile-button btn btn-success my-2"  %>
@@ -47,7 +58,7 @@
       <%= link_to "Talk to your AI Stylist", user_recommendations_path(current_user), class: "profile-button btn btn-info my-2 text-white"  %>
     </div>
 
-    <div class="text-profile">
+    <div class="text-profile mt-4">
       <p>"You have but one life to live. Dare to be beautiful."</p>
     </div>
 

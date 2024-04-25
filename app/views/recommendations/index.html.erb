@@ -1,27 +1,44 @@
-<h1>Style recommendations are ready for <%= current_user.full_name.capitalize %></h1>
+<div class="container">
+<h1 style="margin-bottom: 200px;">Style recommendations are ready for <%= current_user.full_name.capitalize %></h1>
 
  <% @recommendations.each do |recommendation| %>
-  <div class="cards">
-    <article class="information [ card ]">
+  <div class="card recommendation">
+    <div class="card-header">
       <h2 class="title"><%= recommendation.item %></h2>
-      <p class="info"><%= recommendation.description %></p>
-      <dl class="details">
+       <dl class="details">
         <div>
-          <dt><%= recommendation.body_part %></dt>
           <dd>Body Part</dd>
+          <dt><%= recommendation.body_part %></dt>
         </div>
         <div>
-          <dt><%= recommendation.function %></dt>
           <dd>Function</dd>
+          <dt><%= recommendation.function %></dt>
         </div>
       </dl>
-      <button class="button">
+      <% if user_signed_in? %>
+        <% if current_user.recommendations.include?(recommendation) %>
+          <% bookmark = Bookmark.where(recommendation: recommendation, user: current_user).first %>
+          <%= link_to "Remove Bookmark", bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bookmark-button" %>
+        <% else %>
+          <%= link_to "Bookmark", user_bookmarks_path(current_user, recommendation: recommendation), data: {turbo_method: :post}, class: "bookmark-button" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <div class="card-image">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+      </div>
+      <div class="card-info">
+        <p class="info"><%= recommendation.description %></p>
+        <button class="button">
         <span>Learn more</span>
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
           <path d="M0 0h24v24H0V0z" fill="none" />
           <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
         </svg>
-      </button>
-    </article>
+        </button>
+      </div>
+    </div>
+  <% end %>
   </div>
- <% end %>
+</div>
