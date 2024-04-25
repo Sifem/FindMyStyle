@@ -1,12 +1,7 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  border-radius: 15px;
-}
-
+*,
+*:after,
+*:before {
+	
 .recommendation {
   background-color: #c9f9ff;
 }

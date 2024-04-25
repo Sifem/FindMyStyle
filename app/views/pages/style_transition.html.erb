@@ -1,0 +1,26 @@
+
+<div class="transitions-container">
+<%= render "shared/general_card_silhouette" %>
+
+
+
+<div class="goal-cards-container">
+<div class="goals">
+  <% @transitions.each do |transition|%>
+    <a class="card-click" href="<%= style_profile_path %>">
+      <div class="goal-card <%= transition.goal.gsub(" ","_") %>-transparent card-my-silhouette d-flex flex-column align-items-center rounded rounded-2">
+        <div class="card-silhouette <%= transition.goal.gsub(" ","_")  %> d-flex px-2 w-100 py-1 rounded rounded-2 overflow-hidden align-items-center">
+          <div>
+          <%= image_tag "solid_#{Silhouette.where(neutral_silhouette: transition.goal).first.neutral_silhouette.gsub(" ","_")}.png", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
+          </div>
+          <p class="text-white m-0"><%= transition.goal.upcase  %></p>
+        </div>
+          <div class="img-silhouette py-4">
+          <%= cl_image_tag Silhouette.where(neutral_silhouette: "#{transition.goal}").first.photo.key, style: "width:50px"  %>
+          </div>
+      </div>
+   </a>
+  <% end %>
+</div>
+</div>
+</div>

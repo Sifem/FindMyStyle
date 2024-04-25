@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .home-container {
-height: 100vh;
+height: 100%;
 padding: 30px;
 // background: rgb(255,206,88);
 // background: linear-gradient(90deg, rgba(255,206,88,1) 0%, rgba(162,88,255,1) 50%, rgba(95,239,255,0.3981967787114846) 100%);
@@ -29,7 +29,7 @@ flex-direction: column;
   border-style: hidden;
   padding: 10px;
 
-  .btn {
+  .btn-pink {
     color:white;
     display: flex;
     justify-content: space-around;

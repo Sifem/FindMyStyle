@@ -1,0 +1,38 @@
+// .goals-cards-container {
+//   background-color: aqua;
+//   display: flex;
+//   flex-wrap:nowrap;
+//   overflow-x: auto;
+// }
+
+
+.goals {
+  display: flex;
+  align-items: end;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+
+  flex-wrap:nowrap;
+  overflow-x: auto;
+  a {
+    text-decoration: none;
+  }
+}
+
+.goal-card{
+
+  margin: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.goal-cards-container {
+
+}
+.transitions-container {
+background:linear-gradient(90deg, hsla(0, 0%, 100%, 0.447) 0%, rgba(248, 244, 244, 0.482) 50%), url(multiple_silhouettes_grey.jpg);
+background-size: cover;
+}

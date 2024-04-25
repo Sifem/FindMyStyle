@@ -12,32 +12,28 @@
 
 
     <div class="card-silhouette-profile d-flex">
-
      <div class="row">
 
-     <div class="col-6">
-
-      <div class="card-my-silhouette d-flex flex-column align-items-center rounded rounded-3">
-        <div class="card-silhouette d-flex px-2 py-2 rounded rounded-3 overflow-hidden align-items-center">
-          <div>
-          <%= image_tag "solid_rectangle", style: "width:40px", class: "rounded-circle border bg-white me-2" %>
-          </div>
-          <p class="text-white m-0"><%= current_user.silhouettes.first.neutral_silhouette.upcase %></p>
+        <div class="col-6">
+          <%= render "shared/general_card_silhouette" %>
         </div>
-          <div class="img-silhouette d-flex align-items-center justify-content-center">
-          <%= image_tag "1", style: "width: 80px"  %>
-          </div>
-      </div>
-</div>
 
-<div class="col-6">
-      <div class="card-my-recommendation d-flex flex-column align-items-center rounded rounded-3">
-        <div class="card-recommendation d-flex px-2 py-2 rounded rounded-3 overflow-hidden align-items-center">
-          <div>
-          <%= image_tag "kalp", style: "width:40px", class: "rounded-circle border bg-white me-2" %>
+        <div class="col-6">
+        <div class="card-my-recommendation d-flex flex-column align-items-center rounded rounded-2">
+          <div class="card-silhouette d-flex px-2 py-1 rounded rounded-2 overflow-hidden align-items-center">
+            <div>
+            <%= image_tag "kalp", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
+            </div>
+            <p class="text-white m-0"><%="FAVORITES"%></p>
           </div>
-          <p class="text-white m-0"><%="FAVORITES"%></p>
+          
+            <div class="img-silhouette py-4">
+               <%= image_tag "logos_many_shapes", style: "width:80px"  %>
+            </div>
         </div>
+        </div>
+
+
           <div class="img-silhouette d-flex align-items-center justify-content-center text-center">
             <p class="m-0">
               <%= current_user.bookmarks.count %> <br> Recommendations
@@ -45,9 +41,9 @@
           </div>
       </div>
 </div>
+
       </div>
     </div>
-  </div>
 
 
 
@@ -57,9 +53,9 @@
     <p class="text-profile" >Discover more in the below sections to build your personal style</p>
 
     <div class="card-profile-buttons row">
-      <%= link_to "Recommendations", user_recommendations_path(current_user), class: "profile-button-recommendations btn btn-success my-2"  %>
-      <%= link_to "Silhouette Transitions", user_recommendations_path(current_user), class: "profile-button-transitions btn btn-warning my-2"  %>
-      <%= link_to "Talk to your AI Stylist", user_recommendations_path(current_user), class: "profile-button-ai btn btn-info my-2 text-white"  %>
+      <%= link_to "Recommendations", user_recommendations_path(current_user), class: "profile-button btn btn-success my-2"  %>
+      <%= link_to "Silhouette Transitions", style_transition_path, class: "profile-button btn btn-warning my-2"  %>
+      <%= link_to "Talk to your AI Stylist", user_recommendations_path(current_user), class: "profile-button btn btn-info my-2 text-white"  %>
     </div>
 
     <div class="text-profile mt-4">

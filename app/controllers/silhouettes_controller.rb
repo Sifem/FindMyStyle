@@ -8,4 +8,5 @@ class SilhouettesController < ApplicationController
   def show
     @silhouette = Silhouette.find(params[:id])
   end
+
 end

@@ -1,23 +1,50 @@
 .rectangle {
-  background-color: #A258FF;
+  background-color: $new-violet;
+  border-color:  $new-violet;
 }
 
 .hourglass {
-  background-color: rgb(85, 255, 238);
+  background-color: $new-turquese;
 }
 
 .eight {
-  background-color: #FFCE58;
+  background-color: $new-yellow;
 }
 
 .inverted_triangle {
-  background-color: #5247eb;
+  background-color: $new-dark-blue;
 }
 
 .triangle {
-  background-color: #379ae6;
+  background-color: $new-light-blue;
 }
 
 .oval {
-background-color: #DE3B40;
+background-color: $new-red;
+}
+
+
+.rectangle-transparent {
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.75) 0%, rgba(248, 244, 244, 0.75) 50%),$new-violet;
+}
+
+.hourglass-transparent {
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.75) 0%, rgba(248, 244, 244, 0.75) 50%),$new-turquese;
+}
+
+.eight-transparent {
+
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.75) 0%, rgba(248, 244, 244, 0.75) 50%),$new-yellow;
+}
+
+.inverted_triangle-transparent {
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.75) 0%, rgba(248, 244, 244, 0.75) 50%),$new-dark-blue;
+}
+
+.triangle-transparent {
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.75) 0%, rgba(248, 244, 244, 0.75) 50%), $new-light-blue;
+}
+
+.oval-transparent {
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.75) 0%, rgba(248, 244, 244, 0.75) 50%), $new-red;
 }

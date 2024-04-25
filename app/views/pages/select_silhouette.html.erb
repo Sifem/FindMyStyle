@@ -17,7 +17,9 @@
       <% end %>
     <%= simple_form_for(@user_silhouette) do |f| %>
       <%= f.input :silhouette_id, as: :hidden, input_html: { data: {select_silhouette_target:  "inputId" } } %>
-      <%= f.submit "Go to your Silhouette Match!"  %>
+      <div class="discover-shape">
+        <%= f.submit "Go to your Silhouette Match!", class: "btn btn-pink"  %>
+      </div>
     <% end %>
     </div>
   </div>

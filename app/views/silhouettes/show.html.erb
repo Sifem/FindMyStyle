@@ -21,11 +21,20 @@
     <div class="no-patience ">
       <%= raw @silhouette.description%>
     </div>
-<button><%= link_to "See your recommendations!",   user_recommendations_path(current_user.id), class:"text-decoration-none text-dark" %></button>
   </div>
 </div>
 
 <div class= "footer-pic d-flex justify-content-end">
 <%= cl_image_tag @silhouette.photo.key, class: "img-body" %>
 </div>
+ <div class="see-recommendations">
+    <%= link_to user_recommendations_path(current_user.id), class: "category-filter btn btn-pink" do %>See your recommendations
+      <i class="fa-solid fa-arrow-right fa-2xl white-icon"></i>
+    <% end %>
+  </div>
+</div>
+
+
+
+
 </div>
