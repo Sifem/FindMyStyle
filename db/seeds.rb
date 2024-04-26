@@ -9,14 +9,15 @@
 #   end
 require "open-uri"
 # silhouettes = Silhouette.where(combined_silhouette: nil)
-# silhouettes.each { |silhouette| silhouette.photo.purge }
+# silhouettes.each { |silhouette| silhouette.photo.purge }^
+Message.destroy_all
 Recommendation.destroy_all
 UserSilhouette.destroy_all
 Transition.destroy_all
 Silhouette.destroy_all
 User.destroy_all
 # User_shiloutte.destroy_all
-
+puts "Deleting all messages"
 puts "All the database destroyed"
 puts "Generating database"
 
