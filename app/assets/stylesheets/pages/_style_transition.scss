@@ -12,27 +12,54 @@
   background-size: cover;
   background-position: center;
   width: 100vw;
+  padding: 10px 25vw;
+  gap: 40px;
 
   flex-wrap:nowrap;
-  overflow-x: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
   a {
     text-decoration: none;
   }
 }
 
-.goal-card{
+.wrapper {
+  scroll-snap-align: center;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0.8);
+}
 
-  margin: 30px;
+.wrapper.active{
+  transform: scale(1.10);
+}
+.goal-card{
+  margin: 20px 0;
+
 }
 
 a {
   text-decoration: none;
 }
 
-.goal-cards-container {
 
-}
 .transitions-container {
 background:linear-gradient(90deg, hsla(0, 0%, 100%, 0.447) 0%, rgba(248, 244, 244, 0.482) 50%), url(multiple_silhouettes_grey.jpg);
 background-size: cover;
 }
+
+
+// .slider {
+//   position: relative;
+//   width: 100%;
+//   height: 370px;
+//   overflow: hidden;
+// }
+
+// .item {
+//   position: absolute;
+//   width: 200px;
+//   height: 320px;
+//   transition: 0.5s;
+//   left: calc(50% 110px);
+//   top: 0;
+// }
