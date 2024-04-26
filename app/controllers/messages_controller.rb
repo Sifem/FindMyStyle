@@ -1,6 +1,23 @@
 class MessagesController < ApplicationController
   before_action :set_chat, only: [:ai_stylist, :ai_stylist_message]
 
+  def create
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @message = Message.new(message_params)
+    @message.chatroom = @chatroom
+    @message.response = ai(@message.content)
+    @message.user = current_user
+    if @message.save
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
+      head :ok
+    else
+      render "chatrooms/show", status: :unprocessable_entity
+    end
+  end
+
   def ai_stylist
     ai_silhouette = @user.silhouettes.first
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
@@ -37,7 +54,12 @@ class MessagesController < ApplicationController
   end
 
   def ai(content)
+    puts "0"
     client = OpenAI::Client.new
-    client.chat(parameters: { model: "gpt-3.5-turbo", messages: [{ role: "user", content: }] })
+    puts " 1"
+    chaptgpt_response = client.chat(parameters: { model: "gpt-3.5-turbo", messages: [{ role: "user", content: }] })
+    puts "2"
+    chaptgpt_response["choices"][0]["message"]["content"]
+    puts "3"
   end
 end

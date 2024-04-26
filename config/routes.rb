@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :bookmarks, only: :destroy
   resources :recommendations, only: [:show]
   resources :transitions, only: [:show]
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
