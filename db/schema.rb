@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.1].define(version: 2024_04_24_095456) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +42,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_24_095456) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "recommendation_id"
+    t.index ["recommendation_id"], name: "index_bookmarks_on_recommendation_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
@@ -52,14 +58,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_24_095456) do
     t.text "response"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end 
-  create_table "bookmarks", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "recommendation_id"
-    t.index ["recommendation_id"], name: "index_bookmarks_on_recommendation_id"
-    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -116,11 +114,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_24_095456) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-
-  add_foreign_key "messages", "users"
-
   add_foreign_key "bookmarks", "recommendations"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "messages", "users"
   add_foreign_key "transitions", "silhouettes"
   add_foreign_key "user_silhouettes", "silhouettes"
   add_foreign_key "user_silhouettes", "users"
