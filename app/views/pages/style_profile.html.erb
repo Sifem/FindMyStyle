@@ -51,7 +51,7 @@
     <div class="card-profile-buttons row">
       <%= link_to "Recommendations", user_recommendations_path(current_user), class: "profile-button btn btn-success my-2 recomm"  %>
       <%= link_to "Silhouette Transitions", style_transition_path, class: "profile-button btn btn-warning my-2 transit"  %>
-      <%= link_to "Talk to your AI Stylist", user_recommendations_path(current_user), class: "profile-button btn btn-info my-2 text-white aisstyl"  %>
+      <%= link_to "Talk to your AI Stylist",  chatroom_path(1), class: "profile-button btn btn-info my-2 text-white aisstyl"  %>
     </div>
 
     <div class="text-profile mt-4">
