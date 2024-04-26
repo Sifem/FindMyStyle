@@ -1,19 +1,19 @@
-<div class="container chatroom">
+<div data-controller="chat" class="container chatroom">
   <h1>AI Stylist</h1>
 
   <div class="messages">
     <%  %>
-      <div >  <% if !@response %>
-      <small><%= @greeting %></small>
-              <% else %>
-          <strong>Answer: <%= @response  %></strong>
-        <small><% end %>
-          <strong></strong>
-          <i></i>
-        </small>
+        <% @messages.each do |message| %>
+        <hr>
+        <div><strong>User: </strong>   <%= message.content %></div>
+        <hr>
+        <strong>Stylist:</strong>    <%= message.response %>
+        <% end  %>
+
+
         <%= simple_form_for @message, url: ai_stylist_message_path do |f| %>
-          <%= f.input :content, label: "Ask something"  %>
-          <%= f.submit "Submit review", class: "btn btn-primary" %>
+          <%= f.input :content, label:false, placeholder: "Ask something"  %>
+          <%= f.submit "Send",  class: "btn btn-primary" %>
         <% end %>
 
       </div>

@@ -8,17 +8,15 @@ class MessagesController < ApplicationController
     'Hello, I'm Sifem your stylist. How can I help?'"
     chaptgpt_response = ai(content)
     @greeting = chaptgpt_response["choices"][0]["message"]["content"]
-    return unless @user.messages.last
-
-    @response = @user.messages.last.response
-    @user.messages.last.destroy if (@user.messages.last.created_at + 0.5) < Time.now
+    # @user.messages.last.destroy if (@user.messages.last.created_at + 0.5) < Time.now
   end
 
   def ai_stylist_message
     @message = Message.new(message_params)
     ai_silhouette = @user.silhouettes.first
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
-    and would like some clothing recommendations. I got this recommendation #{@user.silhouettes.first.recommendations.first.description} And my question is #{@message.content}. Only respond with answers regarding fashion.'"
+    and would like some clothing recommendations. I got this recommendation #{@user.silhouettes.first.recommendations.first.description}
+    And my question is #{@message.content}. Only respond with answers regarding fashion"
     chaptgpt_response = ai(content)
     @message.response = chaptgpt_response["choices"][0]["message"]["content"]
     @message.user_id = @user.id
@@ -31,6 +29,7 @@ class MessagesController < ApplicationController
   def set_chat
     @user = User.find(current_user.id)
     @message = Message.new
+    @messages = Message.where(user_id: current_user)
   end
 
   def message_params

@@ -1,11 +1,11 @@
 <div class="container">
 <h1 style="margin-bottom: 200px;">Style recommendations are ready for <%= current_user.full_name.capitalize %></h1>
 
- <% @recommendations.each do |recommendation| %>
+<% @recommendations.each do |recommendation| %>
   <div class="card recommendation">
     <div class="card-header">
       <h2 class="title"><%= recommendation.item %></h2>
-       <dl class="details">
+        <dl class="details">
         <div>
           <dd>Body Part</dd>
           <dt><%= recommendation.body_part %></dt>
@@ -15,7 +15,6 @@
           <dt><%= recommendation.function %></dt>
         </div>
       </dl>
-    
     </div>
     <div class="card-body">
       <div class="card-image">

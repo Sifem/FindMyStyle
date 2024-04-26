@@ -34,7 +34,6 @@ Rails.application.routes.draw do
   post "ai_stylist", to: "messages#ai_stylist_message", as: :ai_stylist_message
   get "style_profile", to: "pages#style_profile"
   get "style_transition", to: "pages#style_transition"
-
   get "find_my_style", to: "pages#find_my_style"
   get "home", to: "pages#home"
   get '/my_bookmarks', to: 'bookmarks#index', as: 'my_bookmarks'
