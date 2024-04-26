@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+#redis for cache storage when using Heroku
+gem "redis", ">= 4.0.1"
+
 #open AI for chat-bot
 gem "ruby-openai"
 
