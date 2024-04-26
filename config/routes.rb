@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root to: "pages#home"
 
   devise_for :users
 
@@ -9,8 +10,7 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: :destroy
   resources :recommendations, only: [:show]
-
-  root to: "pages#home"
+  resources :transitions, only: [:show]
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

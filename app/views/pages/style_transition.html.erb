@@ -7,7 +7,7 @@
 <div class="goal-cards-container">
 <div class="goals">
   <% @transitions.each do |transition|%>
-    <a class="card-click" href="<%= style_profile_path %>">
+    <a class="card-click" href="<%= transition_path(transition) %>">
       <div class="goal-card <%= transition.goal.gsub(" ","_") %>-transparent card-my-silhouette d-flex flex-column align-items-center rounded rounded-2">
         <div class="card-silhouette <%= transition.goal.gsub(" ","_")  %> d-flex px-2 w-100 py-1 rounded rounded-2 overflow-hidden align-items-center">
           <div>
@@ -16,7 +16,7 @@
           <p class="text-white m-0"><%= transition.goal.upcase  %></p>
         </div>
           <div class="img-silhouette py-4">
-          <%= cl_image_tag Silhouette.where(neutral_silhouette: "#{transition.goal}").first.photo.key, style: "width:50px"  %>
+          <%= cl_image_tag Silhouette.where(neutral_silhouette: "#{transition.goal}").first.photo.key, style: "height:100px"  %>
           </div>
       </div>
    </a>

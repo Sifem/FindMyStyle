@@ -24,4 +24,6 @@ class PagesController < ApplicationController
     @silhouette = current_user.silhouettes.first
     @transitions = @silhouette.transitions
   end
+
+
 end
