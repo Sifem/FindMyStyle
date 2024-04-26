@@ -81,7 +81,7 @@ eight = Silhouette.new(neutral_silhouette: "eight",
 eight.photo.attach(io: file, filename: "c", content_type: "image/png")
 eight.save
 
-file = File.open("app/assets/images/single_reverse_over.png")
+file = File.open("app/assets/images/single_inverted_triangle.png")
 inverted_triangle = Silhouette.new(neutral_silhouette: "inverted triangle",
                                        combined_silhouette: nil,
                                        description:

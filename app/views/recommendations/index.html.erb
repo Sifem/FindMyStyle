@@ -1,11 +1,11 @@
 <div class="container">
 <h1 style="margin-bottom: 200px;">Style recommendations are ready for <%= current_user.full_name.capitalize %></h1>
 
- <% @recommendations.each do |recommendation| %>
+<% @recommendations.each do |recommendation| %>
   <div class="card recommendation">
     <div class="card-header">
       <h2 class="title"><%= recommendation.item %></h2>
-       <dl class="details">
+        <dl class="details">
         <div>
           <dd>Body Part</dd>
           <dt><%= recommendation.body_part %></dt>
@@ -15,14 +15,6 @@
           <dt><%= recommendation.function %></dt>
         </div>
       </dl>
-      <% if user_signed_in? %>
-        <% if current_user.recommendations.include?(recommendation) %>
-          <% bookmark = Bookmark.where(recommendation: recommendation, user: current_user).first %>
-          <%= link_to "Remove Bookmark", bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bookmark-button" %>
-        <% else %>
-          <%= link_to "Bookmark", user_bookmarks_path(current_user, recommendation: recommendation), data: {turbo_method: :post}, class: "bookmark-button" %>
-        <% end %>
-      <% end %>
     </div>
     <div class="card-body">
       <div class="card-image">
