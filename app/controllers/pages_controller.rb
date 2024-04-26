@@ -17,7 +17,12 @@ class PagesController < ApplicationController
   end
 
   def style_profile
-    @recommendations = current_user.silhouettes.first.recommendations
+    if current_user.silhouettes.count >= 1
+      @recommendations = current_user.silhouettes.first.recommendations
+    else
+      flash.alert = "Must pick silhouette before going to profile page"
+      redirect_to select_silhouette_path
+    end
   end
 
   def style_transition

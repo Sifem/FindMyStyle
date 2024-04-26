@@ -54,12 +54,8 @@ class MessagesController < ApplicationController
   end
 
   def ai(content)
-    puts "0"
     client = OpenAI::Client.new
-    puts " 1"
     chaptgpt_response = client.chat(parameters: { model: "gpt-3.5-turbo", messages: [{ role: "user", content: }] })
-    puts "2"
     chaptgpt_response["choices"][0]["message"]["content"]
-    puts "3"
   end
 end
