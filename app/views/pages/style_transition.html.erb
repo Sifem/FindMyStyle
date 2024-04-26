@@ -5,7 +5,7 @@
 
 
 
-<div class="goal-cards-container">
+<div class="goal-cards-container" data-controller="goal-cards" >
 <div class="goals">
   <% @transitions.each do |transition|%>
     <a class="card-click" href="<%= transition_path(transition) %>">

@@ -7,20 +7,25 @@
   <div class="select-grid">
     <div  class="row g-3 col-12">
       <% @silhouettes.each do |silhouette|  %>
-        <div data-select-silhouette-target="silhouetteCard" data-action="click->select-silhouette#select" data-id="<%=silhouette.id %>" class="d-flex card justify-content-around col-4">
-          <div class="card-silhouette-select bg-light">
-            <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", class: "img-symbol" %>
-            <div><%= cl_image_tag silhouette.photo.key, class: "img-body" %></div>
-            <span><%= silhouette.neutral_silhouette %></span>
-          </div>
+        <div data-select-silhouette-target="silhouetteCard" data-action="click->select-silhouette#select" data-id="<%=silhouette.id %>" class="card-my-silhouette <%=  silhouette.neutral_silhouette %>-transparent d-flex flex-column align-items-center rounded rounded-2 mx-auto">
+          <div class="card-silhouette <%= silhouette.neutral_silhouette %> d-flex px-2 w-100 py-1 rounded rounded-2 overflow-hidden align-items-center">
+            <div>
+              <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
+            </div>
+             <p class="text-white m-0"><%= silhouette.neutral_silhouette.upcase %></p>
+            </div>
+            <div  class="img-silhouette py-4" >
+            <%= cl_image_tag silhouette.photo.key, style: "height:100px"  %>
+            </div>
         </div>
       <% end %>
-    <%= simple_form_for(@user_silhouette) do |f| %>
-      <%= f.input :silhouette_id, as: :hidden, input_html: { data: {select_silhouette_target:  "inputId" } } %>
-      <div class="discover-shape">
-        <%= f.submit "Go to your Silhouette Match!", class: "btn btn-pink"  %>
+      <%= simple_form_for(@user_silhouette) do |f| %>
+        <%= f.input :silhouette_id, as: :hidden, input_html: { data: {select_silhouette_target:  "inputId" } } %>
+        <div class="discover-shape">
+          <%= f.submit "Go to your Silhouette Match!", class: "btn btn-pink"  %>
+      <% end %>
       </div>
-    <% end %>
     </div>
   </div>
 </div>
+

@@ -1,7 +1,7 @@
  <div class="card-my-silhouette <%=  current_user.silhouettes.last.neutral_silhouette %>-transparent d-flex flex-column align-items-center rounded rounded-2 mx-auto">
         <div class="card-silhouette <%=  current_user.silhouettes.last.neutral_silhouette %> d-flex px-2 w-100 py-1 rounded rounded-2 overflow-hidden align-items-center">
           <div>
-          <%= image_tag "solid_#{current_user.silhouettes.last.neutral_silhouette}", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
+          <%= image_tag "solid_#{current_user.silhouettes.last.neutral_silhouette.gsub(" ","_")}.png", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
           </div>
           <p class="text-white m-0"><%= current_user.silhouettes.last.neutral_silhouette.upcase %></p>
         </div>

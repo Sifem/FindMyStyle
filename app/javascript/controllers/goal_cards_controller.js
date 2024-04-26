@@ -1,29 +1,24 @@
-// import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus"
 
-// // Connects to data-controller="goal-cards"
-// export default class extends Controller {
-//   connect() {
-//     this.container = this.element;
-//     this.cards = this.container.querySelectorAll('.goal-card');
-//     this.container.addEventListener('scroll', this.handleScroll.bind(this));
-//   }
-//  }
+// Connects to data-controller="goal-cards"
+export default class extends Controller {
+  connect() {
+    console.log("We trying");
 
-//  handleScroll() {
-//   let containerWidth = this.container.offsetWidth;
-//   let scrollLeft = this.container.scrollLeft;
+      const container = document.querySelector('.goals');
+      const wrappers = document.querySelectorAll('.wrapper');
 
-//   this.cards.forEach((card) => {
-//     let cardRect = card.getBoundingClientRect();
-//     let cardWidth = cardRect.width;
-//     let cardCenter = cardRect.left + cardWidth / 2;
-//     let containerCenter = containerWidth / 2;
-//     let distanceFromCenter = Math.abs(cardCenter - containerCenter - scrollLeft);
-
-//     if (distanceFromCenter < containerWidth / 4) {
-//       card.classList.add('center');
-//     } else {
-//       card.classList.remove('center');
-//     }
-//   });
-// }
+      container.addEventListener('scroll', () => {
+        // console.log('I scrolled');
+        let centerPosition = container.scrollLeft + container.offsetWidth / 2;
+        wrappers.forEach(wrapper => {
+          let wrapperCenter = wrapper.offsetLeft + wrapper.offsetWidth / 2;
+          if (Math.abs(wrapperCenter - centerPosition) < wrapper.offsetWidth) {
+            wrapper.classList.add("active");
+          } else {
+            wrapper.classList.remove("active");
+          }
+        });
+      })
+  }
+ }
