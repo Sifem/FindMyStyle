@@ -1,4 +1,4 @@
-<div data-controller="select-silhouette" class="select-container">
+<div data-controller="select-silhouette" class="select-container">  
   <div class="card-select  text-center">
     <h1>Pick your silhouette match!</h1>
   </div>
@@ -12,7 +12,7 @@
             <div>
               <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
             </div>
-             <p class="text-white m-0"><%= silhouette.neutral_silhouette.upcase %></p>
+              <p class="text-white m-0"><%= silhouette.neutral_silhouette.upcase %></p>
             </div>
             <div  class="img-silhouette py-4" >
             <%= cl_image_tag silhouette.photo.key, style: "height:100px"  %>
@@ -28,4 +28,3 @@
     </div>
   </div>
 </div>
-
