@@ -8,7 +8,7 @@
     <div  class="row g-3 col-12">
       <% @silhouettes.each do |silhouette|  %>
         <div data-select-silhouette-target="silhouetteCard" data-action="click->select-silhouette#select" data-id="<%=silhouette.id %>" class="card-my-silhouette <%=  silhouette.neutral_silhouette %>-transparent d-flex flex-column align-items-center rounded rounded-2 mx-auto">
-          <div class="card-silhouette <%= silhouette.neutral_silhouette %> d-flex px-2 w-100 py-1  overflow-hidden align-items-center">
+          <div class="card-silhouette <%= silhouette.neutral_silhouette.gsub(" ","_") %> d-flex px-2 w-100 py-1  overflow-hidden align-items-center">
             <div>
               <%= image_tag "solid_#{silhouette.neutral_silhouette.gsub(" ","_")}.png", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
             </div>
@@ -27,4 +27,3 @@
       </div>
     </div>
   </div>
-

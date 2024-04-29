@@ -11,6 +11,7 @@ require "open-uri"
 # silhouettes = Silhouette.where(combined_silhouette: nil)
 # silhouettes.each { |silhouette| silhouette.photo.purge }^
 Message.destroy_all
+Bookmark.destroy_all
 Recommendation.destroy_all
 UserSilhouette.destroy_all
 Transition.destroy_all
@@ -152,12 +153,19 @@ irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass
 #                         function: "upper volume",
 #                         item: "jacket")
 
+
+
+
 Recommendation.create!(description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
-                       body_part: "Waist",
-                       function: "Contour",
-                       item: "Side-Seamed Jacket",
-                       exchangeable: oval
-                      )
+  body_part: "Waist",
+  function: "Contour",
+  item: "Side-Seamed Jacket",
+  exchangeable: oval
+)
+
+
+
+
 Recommendation.create!(description: "A belted dress that emphasizes the waist and follows the body's natural curves.",
                        body_part: "Waist",
                        function: "Emphasize",
@@ -185,12 +193,37 @@ Recommendation.create!(description: "A peplum top to add volume to the hips and 
 
                         # Create Recommendations for Rectangle Silhouette
 
-Recommendation.create!(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+file = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714399794/Variety_Cosmic-Crisp-transparent-658x677_y9rjgg.jpg")
+sifem  = Recommendation.new(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
                        body_part: "Core",
                        function: "Enhance Shape",
                        item: "Belted Coat",
                        exchangeable: rectangle
                       )
+                      sifem.photo.attach(io: file, filename: "h", content_type: "image/png")
+                      sifem.save
+
+                      file = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714399794/Variety_Cosmic-Crisp-transparent-658x677_y9rjgg.jpg")
+                      sifem  = Recommendation.new(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+                                             body_part: "Core",
+                                             function: "Enhance Shape",
+                                             item: "Belted Coat",
+                                             exchangeable: rectangle
+                                            )
+                                            sifem.photo.attach(io: file, filename: "h", content_type: "image/png")
+                                            sifem.save
+
+
+                                            file = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714399794/Variety_Cosmic-Crisp-transparent-658x677_y9rjgg.jpg")
+                                            sifem  = Recommendation.new(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+                                                                   body_part: "Core",
+                                                                   function: "Enhance Shape",
+                                                                   item: "Belted Coat",
+                                                                   exchangeable: rectangle
+                                                                  )
+                                                                  sifem.photo.attach(io: file, filename: "h", content_type: "image/png")
+                                                                  sifem.save
+                                                                  
 Recommendation.create!(description: "Emphasize your waist with a stylish high-waisted skirt. The raised waistline draws the eye upward, creating the appearance of a narrower waist and providing a flattering division between your upper and lower body. Choose a skirt with subtle pleating or a flare to add volume and balance to your rectangle silhouette.",
                        body_part: "Waist",
                        function: "Accentuate",
