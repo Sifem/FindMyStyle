@@ -6,13 +6,16 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :recommendations, only: :index
-    resources :bookmarks, only: [:index, :create]
   end
-  resources :bookmarks, only: :destroy
+  resources :bookmarks, only: [:index, :destroy]
   resources :recommendations, only: [:show]
   resources :transitions, only: [:show]
   resources :chatrooms, only: :show do
     resources :messages, only: :create
+  end
+
+  resources :recommendations do
+    resources :bookmarks, only: [:create]
   end
 
 
