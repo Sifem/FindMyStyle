@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
   end
 
   def ai_stylist
+    raise
     ai_silhouette = @user.silhouettes.first
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
     and would like some clothing recommendations. Respond with
@@ -29,7 +30,7 @@ class MessagesController < ApplicationController
 
   def ai_stylist_message
     @message = Message.new(message_params)
-    ai_silhouette = @user.silhouettes.first
+    ai_silhouette = current_user.silhouettes.first
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
     and would like some clothing recommendations. I got this recommendation #{@user.silhouettes.first.recommendations.first.description}
     And my question is #{@message.content}. Only respond with answers regarding fashion"
@@ -52,9 +53,14 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content)
   end
 
-  def ai(content)
+  def ai(user_content)
     client = OpenAI::Client.new
-    chaptgpt_response = client.chat(parameters: { model: "gpt-3.5-turbo", messages: [{ role: "user", content: }] })
+    ai_silhouette = current_user.silhouettes.first
+    base = "I have a #{ai_silhouette.neutral_silhouette} silhouette
+    and would like some clothing recommendations. I got this recommendation
+    #{current_user.silhouettes.first.recommendations.first.description}
+    And my question is #{user_content}. Only respond with answers regarding fashion"
+    chaptgpt_response = client.chat(parameters: { model: "gpt-3.5-turbo", messages: [{ role: "user", content: base }] })
     chaptgpt_response["choices"][0]["message"]["content"]
   end
 end
