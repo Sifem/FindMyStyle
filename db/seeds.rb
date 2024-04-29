@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "open-uri"
-# silhouettes = Silhouette.where(combined_silhouette: nil)
-# silhouettes.each { |silhouette| silhouette.photo.purge }^
+silhouettes = Silhouette.where(combined_silhouette: nil)
+silhouettes.each { |silhouette| silhouette.photo.purge }
 Message.destroy_all
 Recommendation.destroy_all
 UserSilhouette.destroy_all
@@ -151,13 +151,15 @@ irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass
 #                         body_part: "torse",
 #                         function: "upper volume",
 #                         item: "jacket")
-
-Recommendation.create!(description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
+file = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714399794/Variety_Cosmic-Crisp-transparent-658x677_y9rjgg.jpg")
+reco = Recommendation.new(description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
                        body_part: "Waist",
                        function: "Contour",
                        item: "Side-Seamed Jacket",
                        exchangeable: oval
                       )
+                      reco.photo.attach(io: file, filename: "v", content_type: "image/png")
+                      reco.save
 Recommendation.create!(description: "A belted dress that emphasizes the waist and follows the body's natural curves.",
                        body_part: "Waist",
                        function: "Emphasize",

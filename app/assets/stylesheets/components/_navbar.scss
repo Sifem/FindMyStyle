@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  .icon {
+    color:  $new-pink;
+    font-size:xx-large;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

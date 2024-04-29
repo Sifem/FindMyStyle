@@ -1,12 +1,18 @@
 <div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.user.full_name.capitalize %></strong>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
+<% if message.content %>
+    <div class="user_message">
+      <small>
+        <strong><%= message.user.full_name.capitalize %></strong>
+          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </small>
   <p><%= message.content %></p>
+</div>
+  <% end  %>
+<div class="ai_response">
   <small>
     <strong>AI Stylist Sifem</strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
   <p><%= message.response %></p>
+</div>
 </div>
