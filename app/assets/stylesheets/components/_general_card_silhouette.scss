@@ -1,12 +1,13 @@
 .card-my-silhouette {
 
-
+  padding: 0;
   width: 200px;
   height: auto;
+  border-radius: 8px !important;
 
 }
 
 .card-silhouette {
-
+  border-radius: 8px 8px 0px 0px;
 
 }

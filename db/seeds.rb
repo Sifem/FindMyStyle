@@ -47,9 +47,6 @@ rectangle = Silhouette.new(neutral_silhouette: "rectangle",
                                   <li><i class='fa-solid fa-wand-magic-sparkles'></i>The shoulders never extend beyond the hips.</li>
                                   <br>
                                   <li><i class='fa-solid fa-wand-magic-sparkles'></i>Skirts do not taper or flare out at the bottom.</li>
-                                  <br>
-                                  <li><i class='fa-solid fa-wand-magic-sparkles'></i>Any other straight vertical lines within the garment will add to
-                                  the rectangular quality of this silhouette</li>
                                 </ul>",
                                category: "The Wide-Waisted Silhouette")
 rectangle.photo.attach(io: file, filename: "a", content_type: "image/png")
