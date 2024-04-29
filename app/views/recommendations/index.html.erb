@@ -3,6 +3,7 @@
 
 <% @recommendations.each do |recommendation| %>
   <div class="card recommendation">
+
     <div class="card-header">
       <h2 class="title"><%= recommendation.item %></h2>
         <dl class="details">
@@ -14,6 +15,19 @@
           <dd>Function</dd>
           <dt><%= recommendation.function %></dt>
         </div>
+
+        <div>
+          <% if current_user.recommendations.include?(recommendation) %>
+              <%= link_to  bookmark_path(recommendation.bookmarks.where(user: current_user).first), data: {turbo_method: :delete } do %>
+                <i class="fa-solid fa-heart" style="color: #ff000d;"></i>
+              <% end %>
+            <% else %>
+              <%= link_to  recommendation_bookmarks_path(recommendation), data: {turbo_method: :post } do %>
+                <i class="fa-regular fa-heart" style="color: #ff000d;"></i>
+              <% end %>
+            <% end %>
+        </div>
+
       </dl>
     </div>
     <div class="card-body">

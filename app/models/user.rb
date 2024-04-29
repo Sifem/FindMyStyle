@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :messages
 
   has_many :bookmarks
+  has_many :recommendations, through: :bookmarks
 
 end

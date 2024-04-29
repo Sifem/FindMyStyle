@@ -1,30 +1,27 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_bookmark, only: :destroy
 
 
   def index
-    @bookmarks = current_user.bookmarks
+    @bookmarks = Bookmark.where(user: current_user)
   end
-
-  def new
-    @bookmark = Bookmark.new
-  end
-
 
   def create
-    @bookmark = Bookmark.new(user_id: params[:user_id], recommendation_id: params[:recommendation])
+    @recommendation = Recommendation.find(params[:recommendation_id])
+    @bookmark = Bookmark.new(user: current_user, recommendation: @recommendation)
     if @bookmark.save
-      redirect_to user_bookmarks_path(current_user), notice: "Bookmark created successfully!"
+      redirect_to user_recommendations_path(current_user), notice: "Bookmark created successfully!"
     else
       flash.now[:alert] = "Error creating bookmark"
-      render :new, status: :unprocessable_entity
+      redirect_to user_recommendations_path(current_user), status: :unprocessable_entity
     end
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to root_path, notice: "Bookmark removed successfully!"
+    redirect_to user_recommendations_path(current_user), notice: "Bookmark removed successfully!"
   end
 
 
