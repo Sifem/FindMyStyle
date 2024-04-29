@@ -23,8 +23,7 @@ class MessagesController < ApplicationController
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
     and would like some clothing recommendations. Respond with
     'Hello, I'm Sifem your stylist. How can I help?'"
-    chaptgpt_response = ai(content)
-    @greeting = chaptgpt_response["choices"][0]["message"]["content"]
+    @greeting = ai(content)
     # @user.messages.last.destroy if (@user.messages.last.created_at + 0.5) < Time.now
   end
 
