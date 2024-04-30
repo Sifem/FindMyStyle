@@ -49,7 +49,7 @@
     <p class="text-profile" >Discover more in the below sections to build your personal style</p>
 
     <div class="card-profile-buttons row">
-      <%= link_to "Recommendations", user_recommendations_path(current_user), class: "profile-button btn btn-success my-2 recomm"  %>
+      <%= link_to "Recommendations", all_recommendations_path(current_user), class: "profile-button btn btn-success my-2 recomm"  %>
       <%= link_to "Silhouette Transitions", style_transition_path, class: "profile-button btn btn-warning my-2 transit"  %>
       <%= link_to "Talk to your AI Stylist",  chatroom_path(1), class: "profile-button btn btn-info my-2 text-white aisstyl"  %>
     </div>

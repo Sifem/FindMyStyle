@@ -12,9 +12,20 @@ class RecommendationsController < ApplicationController
     end
   end
 
-  def show
-    @recommendation = Recommendation.find(params[:id])
+  def new
+    @recommendation = Recommendation.new
   end
+
+  def all
+    @recommendations = Recommendation.all
+    if params[:query].present?
+      sql_subquery = "item @@ :query OR body_part @@ :query OR function @@ :query OR description @@ :query"
+      @recommendations = @recommendations.where(sql_subquery, query: "%#{params[:query]}%")
+    end
+  end
+
+
+
 
 #   def transition
 #     @silhouette = current.user.silhouettes.first

@@ -43,5 +43,6 @@ Rails.application.routes.draw do
   # get "find_my_style", to: "pages#find_my_style"
   get "home", to: "pages#home"
   get '/my_bookmarks', to: 'bookmarks#index', as: 'my_bookmarks'
+  get '/all_recommendations', to: 'recommendations#all', as: 'all_recommendations'
 
 end
