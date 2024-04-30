@@ -1,6 +1,5 @@
 
 <div class="container-profile d-flex flex-column align-items-center" >
-
   <div class="card-image d-flex flex-column align-items-center">
     <div class="img-profile  img-fluid d-flex flex-column justify-content-center" >
       <%= image_tag "sifem_photo.jpeg", class:"profile-image my-3" %>
@@ -11,51 +10,45 @@
     </div>
 
 
-    <div class="card-silhouette-profile d-flex">
-      <div class="row">
+        <div class="container">
+          <div class="row">
 
-        <div class="col-6">
-          <%= render "shared/general_card_silhouette" %>
-        </div>
-
-        <div class="col-6 bookmarkscard">
-        <%= link_to  bookmarks_path() do %>
-          <div class="card-my-recommendation d-flex flex-column align-items-center rounded rounded-2">
-            <div class="card-silhouette d-flex px-2 py-1 rounded rounded-2 overflow-hidden align-items-center">
-              <div>
-              <%= image_tag "kalp", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
-              </div>
-              <p class="text-white m-0"><%="FAVORITES"%></p>
+            <div class="col card-silhouette-profile">
+              <%= render "shared/general_card_silhouette" %>
             </div>
-            <div class="img-silhouette py-4">
 
-                <%= image_tag "logos_many_shapes", style: "width:80px"  %>
+            <div class="col bookmarkscard">
+                <%= link_to  bookmarks_path() do %>
+            <div class="card-my-recommendation d-flex flex-column align-items-center rounded rounded-2">
+              <div class="card-silhouette d-flex px-2 py-1 rounded rounded-2 overflow-hidden align-items-center">
+                <div>
+                  <%= image_tag "kalp", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
+                </div>
+                  <p class="text-black m-0"><%="FAVORITES"%></p>
               </div>
+                <div class="img-silhouette py-4">
+                  <%= image_tag "logos_many_shapes", style: "width:80px"  %>
+                </div>
+              </div>
+            <% end %>
+            </div>
           </div>
-        <% end %>
         </div>
 
+        </div>
+
+      <div class="card-buttons d-flex flex-column justify-content-center p-5">
+          <p class="text-profile" >Discover more in the below sections to build your personal style</p>
+
+          <div class="card-profile-buttons row">
+            <%= link_to "Recommendations", all_recommendations_path(current_user), class: "profile-button btn btn-success my-2 recomm"  %>
+            <%= link_to "Silhouette Transitions", style_transition_path, class: "profile-button btn btn-warning my-2 transit"  %>
+            <%= link_to "Talk to your AI Stylist",  chatroom_path(1), class: "profile-button btn btn-info my-2 text-white aisstyl"  %>
+          </div>
+
+          <div class="text-profile mt-4">
+            <p>"You have but one life to live. Dare to be beautiful."</p>
+          </div>
       </div>
-</div>
 
       </div>
-    </div>
-
-
-
-
-
-<div class="card=buttons d-flex flex-column justify-content-center p-5">
-    <p class="text-profile" >Discover more in the below sections to build your personal style</p>
-
-    <div class="card-profile-buttons row">
-      <%= link_to "Recommendations", all_recommendations_path(current_user), class: "profile-button btn btn-success my-2 recomm"  %>
-      <%= link_to "Silhouette Transitions", style_transition_path, class: "profile-button btn btn-warning my-2 transit"  %>
-      <%= link_to "Talk to your AI Stylist",  chatroom_path(1), class: "profile-button btn btn-info my-2 text-white aisstyl"  %>
-    </div>
-
-    <div class="text-profile mt-4">
-      <p>"You have but one life to live. Dare to be beautiful."</p>
-    </div>
-
-</div>
