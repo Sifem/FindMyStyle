@@ -15,7 +15,7 @@
 
   <%# Home %>
   <li>
-    <%= link_to (current_user ? user_recommendations_path(current_user) : new_user_session_path), class: 'icon' do %><i class=" icon fa-solid fa-shirt"></i><% end %>
+    <%= link_to (current_user ?  user_recommendations_path(current_user) : new_user_session_path), class: 'icon' do %><i class="mx-5 icon fa-solid fa-shirt"></i><% end %>
   </li>
 
     <%# Profile %>
@@ -25,6 +25,6 @@
   </li>
 
   <li>
-    <%= link_to chatroom_path(1), class: 'icon' do %><i class="fa-regular fa-comment-dots"></i><% end %>
+    <%= link_to chatroom_path(Chatroom.last), class: 'icon' do %><i class="mx-5 fa-regular fa-comment-dots"></i><% end %>
   </li>
 </ul>

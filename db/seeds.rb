@@ -23,7 +23,8 @@ puts "Deleting all messages"
 puts "All the database destroyed"
 puts "Generating database"
 
-Chatroom.create(name: "AI Stylist")
+
+Chatroom.create!(name: "AI Stylist")
 
 #users
 

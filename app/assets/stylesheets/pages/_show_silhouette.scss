@@ -4,6 +4,20 @@
   background:linear-gradient(90deg, #ffffff72 0%, rgba(253, 253, 253, 0.482) 50%), url(multiple_silhouettes_grey.jpg);
   padding: 30px;
   height: 100%;
+  .back {
+    color: white;
+  margin-left: 15px;
+  }
+  .back_button {
+    background-color: $new-pink;
+    border-radius: 4.8px;
+    box-shadow: 10px 5px 5px rgba(113, 93, 93, 0.29);
+    border-style: hidden;
+    padding: 10px;
+  }
+  .white-icon {
+    color: white;
+  }
 }
 
 .silhouette-card {
