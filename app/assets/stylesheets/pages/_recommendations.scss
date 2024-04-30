@@ -1,11 +1,9 @@
 
 .container-recommendations {
-text-align: center;
+  text-align: center;
 }
 
-.recommendation {
-  background-color: #c9f9ff;
-}
+
 
 .img-recommendation {
   img {
@@ -14,8 +12,8 @@ text-align: center;
 }
 
 .card-header {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   padding: 20px;
 }
 
@@ -45,6 +43,8 @@ text-align: center;
   display: flex;
   // flex-direction: column;
   align-items: center;
+  text-align: left;
+  border-radius: 10px;
 }
 
 .card-image {
@@ -58,10 +58,33 @@ text-align: center;
 
 .card-header dd {
   margin: 0;
+  display: flex;
+  justify-content: between;
 }
 
 .column-recommendation {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-heart {
+  margin-top: 24px;
+  font-size: 40px;
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+}
+
+.card-image {
+  img{
+
+    width: 160px;
+  }
 }

@@ -1,7 +1,7 @@
 <div data-controller="chatroom-subscription"
     class="container chatroom"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h2 class="text-center font-weight-bold">AI Stylist</h2>
+  <h1 class="text-center">AI Stylist</h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -16,5 +16,5 @@
       placeholder: "Message your AI stylist...",
       wrapper_html: {class: "flex-grow-1"}
       %>
-      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+      <%= f.submit "Send", class: "btn chat-button mb-3" %>
     <% end %>
