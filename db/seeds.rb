@@ -37,11 +37,7 @@ rectangle = Silhouette.new(neutral_silhouette: "rectangle",
                                description:
                               "<p>Your waist is as wide as or just slightly narrower than your shoulders and hipps/thighs.
                                   <br>
-                                  <br>
 
-                                  This body shape dictates that garment pieces have straight vertical side seams or give the impression of one continuous vertical seam line from shoulder to hem.
-                                  </p>
-                                  <br>
                                 <ul>
                                   <li><i class='fa-solid fa-wand-magic-sparkles'></i>The shoulders are never optically diminished.</li>
                                   <br>
