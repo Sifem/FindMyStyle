@@ -1,2 +1,54 @@
-<h1><%= @recommendation.item %></h1>
-<p><%= @recommendation.description %></p>
+<div class="container text-center p-3">
+<h1 style="margin-bottom: 30px;">Style recommendations are ready for <%= current_user.full_name.capitalize %></h1>
+
+<div class="search-bar row justify-content-center ">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: recommendations_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "belt, waist, dress, shoulder ..."
+        %>
+      <%= submit_tag "🧚🏻 search", name: "", class: "btn btn-fairy btn-light" %>
+    <% end %>
+  </div>
+</div>
+
+<% @recommendations.each do |recommendation| %>
+  <div class="card-recommendation">
+
+    <div class="card-header <%= recommendation.all %>">
+      <h2 class="title"><%= recommendation.item %></h2>
+        <dl class="details">
+        <div>
+          <dd>Body Part</dd>
+          <dt><%= recommendation.body_part %></dt>
+        </div>
+        <div>
+          <dd>Function</dd>
+          <dt><%= recommendation.function %></dt>
+        </div>
+
+        <div>
+          <% if current_user.recommendations.include?(recommendation) %>
+              <%= link_to  bookmark_path(recommendation.bookmarks.where(user: current_user).first), data: {turbo_method: :delete } do %>
+                <i class="fa-solid fa-heart" style="color: #ff000d;"></i>
+              <% end %>
+            <% else %>
+              <%= link_to  recommendation_bookmarks_path(recommendation), data: {turbo_method: :post } do %>
+                <i class="fa-regular fa-heart" style="color: #ff000d;"></i>
+              <% end %>
+            <% end %>
+        </div>
+
+      </dl>
+    </div>
+    <div class="card-body <%= recommendation.exchangeable.neutral_silhouette %>-transparent mb-3">
+      <div class="card-image">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+      </div>
+      <div class="card-info">
+        <p class="info"><%= recommendation.description %></p>
+      </div>
+    </div>
+  <% end %>
