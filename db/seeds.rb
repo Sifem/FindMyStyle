@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "open-uri"
-# silhouettes = Silhouette.where(combined_silhouette: nil)
-# silhouettes.each { |silhouette| silhouette.photo.purge }^
+silhouettes = Silhouette.where(combined_silhouette: nil)
+silhouettes.each { |silhouette| silhouette.photo.purge }
 Message.destroy_all
 Bookmark.destroy_all
 Recommendation.destroy_all
@@ -37,11 +37,7 @@ rectangle = Silhouette.new(neutral_silhouette: "rectangle",
                                description:
                               "<p>Your waist is as wide as or just slightly narrower than your shoulders and hipps/thighs.
                                   <br>
-                                  <br>
 
-                                  This body shape dictates that garment pieces have straight vertical side seams or give the impression of one continuous vertical seam line from shoulder to hem.
-                                  </p>
-                                  <br>
                                 <ul>
                                   <li><i class='fa-solid fa-wand-magic-sparkles'></i>The shoulders are never optically diminished.</li>
                                   <br>
@@ -130,9 +126,9 @@ invertedtriangleeight = Silhouette.create!(neutral_silhouette: "inverted_triangl
 #user_Silhouettes
 
 irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass.id)
-#leesshape = UserSilhouette.create!(user_id: lee.id, silhouette_id: ovalinverted.id)
-#sifemsshape = UserSilhouette.create!(user_id: sifem.id, silhouette_id: rectangle.id)
-#sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrectangle.id)
+leesshape = UserSilhouette.create!(user_id: lee.id, silhouette_id: ovalinverted.id)
+sifemsshape = UserSilhouette.create!(user_id: sifem.id, silhouette_id: rectangle.id)
+sylviashape = UserSilhouette.create!(user_id: sylvia.id, silhouette_id: eightrectangle.id)
 
 #recomendations
 
@@ -152,6 +148,59 @@ irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass
 #                         body_part: "torse",
 #                         function: "upper volume",
 #                         item: "jacket")
+
+                        # Create Recommendations for Rectangle Silhouette
+
+file = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714399794/Variety_Cosmic-Crisp-transparent-658x677_y9rjgg.jpg")
+sifem  = Recommendation.new(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+                       body_part: "Core",
+                       function: "Enhance Shape",
+                       item: "Belted Coat",
+                       exchangeable: rectangle
+                      )
+                      sifem.photo.attach(io: file, filename: "h", content_type: "image/png")
+                      sifem.save
+
+                      file = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714399794/Variety_Cosmic-Crisp-transparent-658x677_y9rjgg.jpg")
+                      sifem  = Recommendation.new(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+                                             body_part: "Core",
+                                             function: "Enhance Shape",
+                                             item: "Belted Coat",
+                                             exchangeable: rectangle
+                                            )
+                                            sifem.photo.attach(io: file, filename: "h", content_type: "image/png")
+                                            sifem.save
+
+
+                                            file = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714399794/Variety_Cosmic-Crisp-transparent-658x677_y9rjgg.jpg")
+                                            sifem  = Recommendation.new(description: "This belted coat is perfect for enhancing the natural lines of your rectangle silhouette. By cinching at the waist with a belt, it helps to create an illusion of curves, optimizing your core from shoulders to thighs. This creates a more defined waistline and adds structure to your overall look.",
+                                                                   body_part: "Core",
+                                                                   function: "Enhance Shape",
+                                                                   item: "Belted Coat",
+                                                                   exchangeable: rectangle
+                                                                  )
+                                                                  sifem.photo.attach(io: file, filename: "h", content_type: "image/png")
+                                                                  sifem.save
+                                                                  
+Recommendation.create!(description: "Emphasize your waist with a stylish high-waisted skirt. The raised waistline draws the eye upward, creating the appearance of a narrower waist and providing a flattering division between your upper and lower body. Choose a skirt with subtle pleating or a flare to add volume and balance to your rectangle silhouette.",
+                       body_part: "Waist",
+                       function: "Accentuate",
+                       item: "High-waisted Skirt",
+                       exchangeable: rectangle
+                      )
+
+Recommendation.create!(description: "Enhance your rectangle silhouette by adding some volume to your hips with a peplum top. The flared ruffle at the waist creates a more pronounced hip area, balancing your silhouette and giving the illusion of curves. This top is particularly effective for creating a more feminine shape, ideal for those with a more linear body type like the rectangle silhouette.",
+                       body_part: "Hips",
+                       function: "Add Volume",
+                       item: "Peplum Top",
+                       exchangeable: rectangle
+                      )
+                        # Recommendations to transition silhouette
+
+
+# Transitions
+
+
 trans1 = Transition.create!(silhouette_id: rectangle.id, goal: "oval")
 trans2 = Transition.create!(silhouette_id: rectangle.id, goal: "eight")
 trans3 = Transition.create!(silhouette_id: rectangle.id, goal: "hourglass")

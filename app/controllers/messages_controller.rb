@@ -19,7 +19,6 @@ class MessagesController < ApplicationController
   end
 
   def ai_stylist
-    raise
     ai_silhouette = @user.silhouettes.first
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
     and would like some clothing recommendations. Respond with

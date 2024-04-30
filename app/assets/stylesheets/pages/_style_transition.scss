@@ -47,6 +47,14 @@ background:linear-gradient(90deg, hsla(0, 0%, 100%, 0.447) 0%, rgba(248, 244, 24
 background-size: cover;
 }
 
+.transition-goal-title {
+  color:white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  padding: 20px;
+}
 
 // .slider {
 //   position: relative;

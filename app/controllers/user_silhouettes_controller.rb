@@ -5,9 +5,9 @@ class UserSilhouettesController < ApplicationController
       @silhouette = Silhouette.find(params["user_silhouette"]["silhouette_id"])
       @user_silhouette = UserSilhouette.new(user: current_user, silhouette: @silhouette)
       @user_silhouette.save
-      redirect_to silhouette_path(@silhouette)
+      redirect_to style_profile_path
     else
-      redirect_to silhouette_path(current_user.silhouettes.last)
+      redirect_to style_profile_path
       flash.alert = "Silhoette already assigned to user"
     end
   end
