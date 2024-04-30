@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   def select_silhouette
     @silhouettes = Silhouette.where(combined_silhouette: nil)
     @user_silhouette = UserSilhouette.new
-    @reco = Recommendation.find(101)
   end
 
   def find_my_style
