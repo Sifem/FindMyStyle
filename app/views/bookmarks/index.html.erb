@@ -1,10 +1,58 @@
-<div class="container">
-<h1> Top recommendations </h1>
 
+<div class="container text-center p-3">
+<h1 style="margin-bottom: 30px;">Your favorite recommendations are ready for you, <%= current_user.full_name.capitalize %></h1>
+
+<div class="row justify-content-center ">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: bookmarks_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "belt, waist, dress, shoulder ..."
+        %>
+      <%= submit_tag "🧚🏻 Search", name: "", class: "btn btn-fairy btn-light" %>
+    <% end %>
+  </div>
+</div>
 
 <% @bookmarks.each do |bookmark| %>
-  <%= bookmark.recommendation.body_part %>
-  <%= bookmark.recommendation.description %>
-  <%= bookmark.recommendation.function %>
-  <%= bookmark.recommendation.item %>
-<% end %>
+  <div class="card-recommendation">
+
+    <div class="card-header <%= bookmark.recommendation.exchangeable.neutral_silhouette %>">
+
+        <dl class="details">
+      <div>
+      <dt>Item</dt>
+      <dd class="title"><%= bookmark.recommendation.item %></dd>
+      </div>
+
+        <div>
+          <dt>Body Part</dt>
+          <dd><%= bookmark.recommendation.body_part %></dd>
+        </div>
+
+        <div>
+          <dt>Function</dt>
+          <dd><%= bookmark.recommendation.function %></dd>
+        </div>
+
+        <div>
+          <%= link_to  bookmark_path(bookmark), data: {turbo_method: :delete } do %>
+            <i class="fa-sharp fa-solid fa-heart fa-2xl" style="color: #ff000d;"></i>
+          <% end %>
+        </div>
+
+
+      </dl>
+    </div>
+    <div class="card-body <%= bookmark.recommendation.exchangeable.neutral_silhouette %>-transparent mb-3">
+      <div class="card-image">
+      <% if bookmark.recommendation.photo.key %>
+        <%= cl_image_tag bookmark.recommendation.photo.key  %>
+        <% end %>
+      </div>
+      <div class="card-info">
+        <p class="info"><%= bookmark.recommendation.description %></p>
+      </div>
+    </div>
+  <% end %>

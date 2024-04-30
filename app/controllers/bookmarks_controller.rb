@@ -11,17 +11,17 @@ class BookmarksController < ApplicationController
     @recommendation = Recommendation.find(params[:recommendation_id])
     @bookmark = Bookmark.new(user: current_user, recommendation: @recommendation)
     if @bookmark.save
-      redirect_to user_recommendations_path(current_user), notice: "Bookmark created successfully!"
+      redirect_to request.referer, notice: "Bookmark created successfully!"
     else
       flash.now[:alert] = "Error creating bookmark"
-      redirect_to user_recommendations_path(current_user), status: :unprocessable_entity
+      redirect_to request.referer, status: :unprocessable_entity
     end
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to user_recommendations_path(current_user), notice: "Bookmark removed successfully!"
+    redirect_to request.referer, notice: "Bookmark removed successfully!"
   end
 
 
