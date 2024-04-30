@@ -3,5 +3,4 @@ class TransitionsController < ApplicationController
     @transition = Transition.find(params[:id])
     @recommendations = @transition.recommendations
   end
-
 end

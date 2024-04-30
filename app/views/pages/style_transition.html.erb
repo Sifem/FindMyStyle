@@ -26,25 +26,27 @@
 </div>
 </div>
 
-<p > This are the recommendations to transition from <%= current_user.silhouettes.last.neutral_silhouette.upcase %> to <p>
+
 
 <% @transitions.each do |transition| %>
-  <div data-select-transition-target="transition" data-transition-id="<%=transition.id %>" class="d-none">
+  <div data-select-transition-target="transition" data-transition-id="<%=transition.id %>" class="d-none p-3">
   <% transition.recommendations.each do |recommendation| %>
+      <div class="transition-goal-title category-filter btn btn-pink" ><%= transition.goal.upcase%>  </div>
     <div class="card recommendation">
 
-      <div class="transition-goal-title category-filter btn btn-pink <%=transition.goal.gsub(" ","_")%>-transparent" ><%= transition.goal.upcase%>  </div>
-
-      <div class="card-header <%= transition.goal%>   ">
-        <h2 class="title"><%= recommendation.item %></h2>
+      <div class="card-header <%= transition.goal%> ">
           <dl class="details">
           <div>
-            <dd>Body Part</dd>
-            <dt><%= recommendation.body_part %></dt>
+            <dt>Item</dt>
+            <dd><%= recommendation.item %></dd>
           </div>
           <div>
-            <dd>Function</dd>
-            <dt><%= recommendation.function %></dt>
+            <dt>Body Part</dt>
+            <dd><%= recommendation.body_part %></dd>
+          </div>
+          <div>
+            <dt>Function</dt>
+            <dd><%= recommendation.function %></dd>
           </div>
 
           <div>
@@ -67,12 +69,8 @@
         </div>
         <div class="card-info">
           <p class="info"><%= recommendation.description %></p>
-          <button class="button">
-          <span>Learn more</span>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
-            <path d="M0 0h24v24H0V0z" fill="none" />
-            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
-          </svg>
+
+
           </button>
         </div>
       </div>
