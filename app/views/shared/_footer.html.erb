@@ -15,7 +15,7 @@
 
   <%# Home %>
   <li>
-    <%= link_to user_recommendations_path(current_user), class: 'icon' do %><i class=" icon fa-solid fa-shirt"></i><% end %>
+    <%= link_to (current_user ? user_recommendations_path(current_user) : new_user_session_path), class: 'icon' do %><i class=" icon fa-solid fa-shirt"></i><% end %>
   </li>
 
     <%# Profile %>

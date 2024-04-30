@@ -17,12 +17,13 @@ UserSilhouette.destroy_all
 Transition.destroy_all
 Silhouette.destroy_all
 User.destroy_all
+Chatroom.destroy_all
 # User_shiloutte.destroy_all
 puts "Deleting all messages"
 puts "All the database destroyed"
 puts "Generating database"
 
-
+Chatroom.create(name: "AI Stylist")
 
 #users
 
@@ -181,7 +182,7 @@ sifem  = Recommendation.new(description: "This belted coat is perfect for enhanc
                                                                   )
                                                                   sifem.photo.attach(io: file, filename: "h", content_type: "image/png")
                                                                   sifem.save
-                                                                  
+
 Recommendation.create!(description: "Emphasize your waist with a stylish high-waisted skirt. The raised waistline draws the eye upward, creating the appearance of a narrower waist and providing a flattering division between your upper and lower body. Choose a skirt with subtle pleating or a flare to add volume and balance to your rectangle silhouette.",
                        body_part: "Waist",
                        function: "Accentuate",
