@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "open-uri"
-# silhouettes = Silhouette.where(combined_silhouette: nil)
-# silhouettes.each { |silhouette| silhouette.photo.purge }^
+silhouettes = Silhouette.where(combined_silhouette: nil)
+silhouettes.each { |silhouette| silhouette.photo.purge }
 Message.destroy_all
 Bookmark.destroy_all
 Recommendation.destroy_all
@@ -153,6 +153,13 @@ irenesshape = UserSilhouette.create!(user_id: irene.id, silhouette_id: hourglass
 #                         function: "upper volume",
 #                         item: "jacket")
 
+Recommendation.new(description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
+                       body_part: "Waist",
+                       function: "Contour",
+                       item: "Side-Seamed Jacket",
+                       exchangeable: oval
+                      )
+
 
 
 
@@ -162,8 +169,6 @@ Recommendation.create!(description: "A side-seamed jacket tailored to contour th
   item: "Side-Seamed Jacket",
   exchangeable: oval
 )
-
-
 
 
 Recommendation.create!(description: "A belted dress that emphasizes the waist and follows the body's natural curves.",
