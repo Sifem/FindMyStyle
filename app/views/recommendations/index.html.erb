@@ -35,17 +35,18 @@
           <dd><%= recommendation.function %></dd>
         </div>
 
-        <div>
-          <% if current_user.recommendations.include?(recommendation) %>
-              <%= link_to  bookmark_path(recommendation.bookmarks.where(user: current_user).first), data: {turbo_method: :delete } do %>
-                <i class="fa-sharp fa-solid fa-heart fa-2xl" style="color: #ff000d;"></i>
+        <div class=" d-flex justify-content-center align-items-center" >
+            <% if current_user.recommendations.include?(recommendation) %>
+                <%= link_to  bookmark_path(recommendation.bookmarks.where(user: current_user).first), data: {turbo_method: :delete } do %>
+                  <i class="fa-solid fa-bookmark" style="color: #ffffff;"></i>
+                <% end %>
+              <% else %>
+                <%= link_to  recommendation_bookmarks_path(recommendation), data: {turbo_method: :post } do %>
+                  <i class="fa-regular fa-bookmark" style="color: #ffffff;"></i>
+                <% end %>
               <% end %>
-            <% else %>
-              <%= link_to  recommendation_bookmarks_path(recommendation), data: {turbo_method: :post } do %>
-                <i class="fa-sharp fa-regular fa-heart fa-2xl" style="color: #ff000d;"></i>
-              <% end %>
-            <% end %>
-        </div>
+          </div>
+        </dl>
 
       </dl>
     </div>
