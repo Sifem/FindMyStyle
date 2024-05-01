@@ -16,7 +16,7 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   p {
-    text-align: right;
+    text-align: center;
     margin-bottom: 40px;
   }
 }
@@ -44,4 +44,10 @@ flex-direction: column;
   text-align: center;
   text-shadow: 4px 2px 5px #828080;
   color: #444444;
+}
+
+
+.index-silhouette-bar {
+  font-family: "Playfair Display", serif, "Helvetica", "sans-serif";
+  border: none;
 }
