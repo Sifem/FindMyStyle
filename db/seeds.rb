@@ -422,7 +422,7 @@ recommendation15 = Recommendation.new(
 recommendation15.photo.attach(io: file15, filename: "wrap_jumpsuit.jpg", content_type: "image/jpeg")
 recommendation15.save
 
-file = URI.open("https://images.pexels.com/photos/3952091/pexels-photo-3952091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+# file = URI.open("https://images.pexels.com/photos/3952091/pexels-photo-3952091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
 
 # recommendation = Recommendation.new(
 #   description: "A side-seamed jacket tailored to contour the oval silhouette's wide waist.",
@@ -550,38 +550,38 @@ file = URI.open("https://images.pexels.com/photos/3952091/pexels-photo-3952091.j
 # recommendation26.photo.attach(io: file, filename: "h", content_type: "image/png")
 # recommendation26.save
 
-# file27 = URI.open("https://images.pexels.com/photos/1898733/pexels-photo-1898733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-# recommendation27  = Recommendation.new(
-#   description: "Round the shoulders in a chemise-style dress",
-#   body_part: "Shoulders",
-#   function: "Ovalize",
-#   item: "Chemise-style dress",
-#   exchangeable: trans1
-# )
-# recommendation27.photo.attach(io: file, filename: "h", content_type: "image/png")
-# recommendation27.save
+file = URI.open("https://images.pexels.com/photos/1898733/pexels-photo-1898733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+recommendation27  = Recommendation.new(
+  description: "Round the shoulders in a chemise-style dress",
+  body_part: "Shoulders",
+  function: "Ovalize",
+  item: "Chemise-style dress",
+  exchangeable: trans1
+)
+recommendation27.photo.attach(io: file, filename: "h", content_type: "image/png")
+recommendation27.save
 
-# file28 = URI.open("https://images.pexels.com/photos/2395921/pexels-photo-2395921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-# recommendation28  = Recommendation.new(
-#   description: "second",
-#   body_part: "Shoulders",
-#   function: "Ovalize",
-#   item: "Floral ress",
-#   exchangeable: trans2
-# )
-# recommendation28.photo.attach(io: file, filename: "h", content_type: "image/png")
-# recommendation28.save
+file = URI.open("https://images.pexels.com/photos/2395921/pexels-photo-2395921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+recommendation28  = Recommendation.new(
+  description: "second",
+  body_part: "Shoulders",
+  function: "Ovalize",
+  item: "Floral ress",
+  exchangeable: trans2
+)
+recommendation28.photo.attach(io: file, filename: "h", content_type: "image/png")
+recommendation28.save
 
-# file29 = URI.open("https://images.pexels.com/photos/3952091/pexels-photo-3952091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-# recommendation29  = Recommendation.new(
-#   description: "Drop straigth seams from the shoulders to the hem. Don't accent waist",
-#   body_part: "Waist",
-#   function: "Add volume",
-#   item: "Dress",
-#   exchangeable: trans3
-# )
-# recommendation29.photo.attach(io: file, filename: "h", content_type: "image/png")
-# recommendation29.save
+file = URI.open("https://images.pexels.com/photos/3952091/pexels-photo-3952091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+recommendation29  = Recommendation.new(
+  description: "Drop straigth seams from the shoulders to the hem. Don't accent waist",
+  body_part: "Waist",
+  function: "Add volume",
+  item: "Dress",
+  exchangeable: trans3
+)
+recommendation29.photo.attach(io: file, filename: "h", content_type: "image/png")
+recommendation29.save
  # Recommendations to transition silhouette
 
 
