@@ -36,11 +36,11 @@
           <div class=" d-flex justify-content-center align-items-center" >
             <% if current_user.recommendations.include?(recommendation) %>
                 <%= link_to  bookmark_path(recommendation.bookmarks.where(user: current_user).first), data: {turbo_method: :delete } do %>
-                  <i class="fa-solid fa-bookmark" style="color: #000000;"></i>
+                  <i class="fa-solid fa-bookmark" style="color: #ffffff;"></i>
                 <% end %>
               <% else %>
                 <%= link_to  recommendation_bookmarks_path(recommendation), data: {turbo_method: :post } do %>
-                  <i class="fa-regular fa-bookmark" style="color: #000000;"></i>
+                  <i class="fa-regular fa-bookmark" style="color: #ffffff;"></i>
                 <% end %>
               <% end %>
           </div>
