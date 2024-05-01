@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
     ai_silhouette = @user.silhouettes.first
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
     and would like some clothing recommendations. Respond with
-    'Hello, I'm Sifem your stylist. How can I help?'"
+    'Hello, I'm Margot your stylist. Let's build a killer wardrobe together!'"
     @greeting = ai(content)
     # @user.messages.last.destroy if (@user.messages.last.created_at + 0.5) < Time.now
   end
@@ -32,7 +32,8 @@ class MessagesController < ApplicationController
     ai_silhouette = current_user.silhouettes.first
     content = "I have a #{ai_silhouette.neutral_silhouette} silhouette
     and would like some clothing recommendations. I got this recommendation #{@user.silhouettes.first.recommendations.first.description}
-    And my question is #{@message.content}. Only respond with answers regarding fashion"
+    And my question is #{@message.content}. If the question is about another topic, say you only give advise about fashion in one sentence, and don't give any fashion advice at all. Respond as if you are my best friend. Address me using words like honey, darling, sweetheart, gorgeous etc. You may use the book “The Triumph of Individual Style: A Guide to Dressing Your Body, Your Beauty, Your Self Paperback – October 1, 2002
+    by Carla Mason Mathis(Author),Helen Villa Connor(Author), but don't mention it to me. Sound like a fashionista, chic and creative."
     chaptgpt_response = ai(content)
     @message.response = chaptgpt_response["choices"][0]["message"]["content"]
     @message.user_id = @user.id
@@ -53,12 +54,14 @@ class MessagesController < ApplicationController
   end
 
   def ai(user_content)
+    # raise
     client = OpenAI::Client.new
     ai_silhouette = current_user.silhouettes.first
     base = "I have a #{ai_silhouette.neutral_silhouette} silhouette
     and would like some clothing recommendations. I got this recommendation
     #{current_user.silhouettes.first.recommendations.first.description}
-    And my question is #{user_content}. Only respond with answers regarding fashion"
+    And my question is #{user_content}. If the question is about another topic, say you only give advise about fashion in one sentence, and absolutely don't give any fashion advice at all. Respond as if you are my best friend. Address me using words like honey, darling, sweetheart, gorgeous etc. You may use the book “The Triumph of Individual Style: A Guide to Dressing Your Body, Your Beauty, Your Self Paperback – October 1, 2002
+    by Carla Mason Mathis(Author),Helen Villa Connor(Author), but don't mention it to me. Sound like a fashionista, chic and creative."
     chaptgpt_response = client.chat(parameters: { model: "gpt-3.5-turbo", messages: [{ role: "user", content: base }] })
     chaptgpt_response["choices"][0]["message"]["content"]
   end
