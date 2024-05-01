@@ -125,8 +125,6 @@ ovalinverted = Silhouette.create!(neutral_silhouette: "oval", combined_silhouett
 iventertedtrianglehour = Silhouette.create!(neutral_silhouette: "inverted_triangle", combined_silhouette: "hourglass")
 invertedtriangleeight = Silhouette.create!(neutral_silhouette: "inverted_triangle", combined_silhouette: "eight")
 
-#user_Silhouettes
-
 #recomendations
 
 # Recommendation.create!(silhouette_id: rectangle.id,
