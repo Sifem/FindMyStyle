@@ -2,7 +2,7 @@
 <div class="container-profile d-flex flex-column align-items-center" >
   <div class="card-image d-flex flex-column align-items-center">
     <div class="img-profile  img-fluid d-flex flex-column justify-content-center" >
-      <%= image_tag "sifem_photo.jpeg", class:"profile-image my-3" %>
+      <%= image_tag "Foto Balcon Kornerpark (2).jpeg", class:"profile-image my-3" %>
       <div class="text-profile text-center">
           <h2>Hi <%= current_user.full_name.capitalize %></h2>
           <p>Your Silhouette Profile</p>
@@ -11,16 +11,16 @@
 
 
         <div class="container">
-          <div class="row">
+          <div class="row mx-auto gap-3">
 
-            <div class="col card-silhouette-profile">
+            <div class="col card-silhouette-profile p-0">
               <%= render "shared/general_card_silhouette" %>
             </div>
 
-            <div class="col bookmarkscard">
+            <div class="col bookmarkscard p-0">
                 <%= link_to  bookmarks_path do %>
             <div class="card-my-recommendation d-flex flex-column align-items-center rounded rounded-2">
-              <div class="card-silhouette d-flex px-2 py-1 rounded rounded-2 overflow-hidden align-items-center">
+              <div class="card-silhouette d-flex px-2 py-1 rounded rounded-2 overflow-hidden align-items-center w-100 bg-white">
                 <div>
                   <%= image_tag "kalp", style: "width:40px", class: "rounded-circle border bg-white mx-2" %>
                 </div>

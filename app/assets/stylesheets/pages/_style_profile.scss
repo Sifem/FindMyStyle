@@ -3,6 +3,14 @@
   border-radius: 50%;
 }
 
+
+
+// .recomm{
+//   background-color: $new-turquese;
+//   border: none;
+// }
+
+
 .transit{
   background-color: #FFCE58;
   border: none;
@@ -22,6 +30,7 @@
 }
 
 .bookmarkscard {
+  width: 200px;
   border: solid 1px;
   border-color: rgb(174, 172, 172);
   background:linear-gradient(90deg, hsla(0, 0%, 100%, 0.447) 0%, rgba(248, 244, 244, 0.482) 20%), url(multiple_silhouettes_grey.jpg);
