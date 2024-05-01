@@ -20,20 +20,20 @@
     <div class="card-header <%= recommendation.exchangeable.neutral_silhouette %>">
 
         <dl class="details">
-      <div>
-      <dt>Item</dt>
-      <dd class="title"><%= recommendation.item %></dd>
-      </div>
+          <div>
+          <dt>Item</dt>
+          <dd class="title"><%= recommendation.item %></dd>
+          </div>
 
-        <div>
-          <dt>Body Part</dt>
-          <dd><%= recommendation.body_part %></dd>
-        </div>
+          <div>
+            <dt>Body Part</dt>
+            <dd><%= recommendation.body_part %></dd>
+          </div>
 
-        <div>
-          <dt>Function</dt>
-          <dd><%= recommendation.function %></dd>
-        </div>
+          <div>
+            <dt>Function</dt>
+            <dd><%= recommendation.function %></dd>
+          </div>
 
         <div class=" d-flex justify-content-center align-items-center" >
             <% if current_user.recommendations.include?(recommendation) %>
@@ -51,7 +51,7 @@
       </dl>
     </div>
     <div class="card-body <%= recommendation.exchangeable.neutral_silhouette %>-transparent mb-3">
-      <div class="card-image">
+      <div class="card-image me-2">
       <% if recommendation.photo.key %>
         <%= cl_image_tag recommendation.photo.key  %>
         <% end %>
