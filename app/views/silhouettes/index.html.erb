@@ -1,7 +1,4 @@
 <div class="index-container ">
-<%# <div>
-  <i link_to  class=" d-flex fa-solid fa-arrow-left"></i>
-</div> %>
   <h2>Explore silhouettes below:</h2>
 <div class="grid-container d-flex flex-column justify-content-center w-75 mx-auto g-3">
     <% @silhouettes.each do |silhouette| %>
@@ -20,4 +17,5 @@
     <%= link_to select_silhouette_path, class: "category-filter btn btn-pink" do %>Select your silhouette
       <i class="fa-solid fa-arrow-right fa-2xl white-icon"></i>
 <% end %>
+</div>
 </div>
