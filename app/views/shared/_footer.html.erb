@@ -1,30 +1,18 @@
-<%# <footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <span class="text-muted">© <%= Date.current.year Find My Style. All rights reserved.</span>
-      </div>
-    </div>
-  </div>
-</footer> %>
-
-
-
-
 <ul class="footer-links fs-1 p-2 m-0 d-flex gap-5 list-unstyled justify-content-between w-100">
-
-  <%# Home %>
   <li>
-    <%= link_to (current_user ?  user_recommendations_path(current_user) : new_user_session_path), class: 'icon' do %><i class="mx-5 icon fa-solid fa-shirt"></i><% end %>
+    <%= link_to (current_user ? user_recommendations_path(current_user) : new_user_session_path), class: "icon#{' active' if current_user && current_page?(user_recommendations_path(current_user))}" do %>
+      <i class="fa-solid fa-shirt"></i>
+    <% end %>
+
   </li>
-
-    <%# Profile %>
-
-    <li>
-    <%= link_to style_transition_path, class: 'icon' do %><i class="icon fa-solid fa-shapes"></i><% end %>
-  </li>
-
   <li>
-    <%= link_to chatroom_path(Chatroom.last), class: 'icon' do %><i class="mx-5 fa-regular fa-comment-dots"></i><% end %>
+    <%= link_to style_transition_path, class: "icon#{' active' if current_page?(style_transition_path)}" do %>
+      <i class="fa-solid fa-shapes"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to chatroom_path(Chatroom.last), class: "icon#{' active' if current_page?(chatroom_path(Chatroom.last))}" do %>
+      <i class="fa-regular fa-comment-dots"></i>
+    <% end %>
   </li>
 </ul>
