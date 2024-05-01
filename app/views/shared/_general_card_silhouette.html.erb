@@ -6,6 +6,8 @@
           <p class="text-white m-0"><%= current_user.silhouettes.last.neutral_silhouette.upcase %></p>
         </div>
           <div class="img-silhouette py-4">
+          <% if current_user.silhouettes.last %>
           <%= cl_image_tag current_user.silhouettes.last.photo.key, style: "height:100px" %>
+          <% end %>
           </div>
   </div>
