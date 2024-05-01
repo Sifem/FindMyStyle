@@ -23,12 +23,12 @@
   </div>
 </div>
 
-  <div class= "footer-pic d-flex justify-content-end">
-    <%= cl_image_tag @silhouette.photo.key, class: "img-body" %>
+  <div class= "footer-pic d-flex justify-content-between">
   <div class="see-recommendations btn btn-pink">
     <%= link_to silhouettes_path, class: "text-light" do %> <i class="fa-solid fa-arrow-left fa-2xl white-icon"></i>
       <strong class="back">back</strong>
     <% end %>
   </div>
+    <%= cl_image_tag @silhouette.photo.key, class: "img-body" %>
   </div>
   </div>
