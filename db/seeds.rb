@@ -417,7 +417,7 @@ recommendation15 = Recommendation.new(
   body_part: "Full Body",
   function: "Accentuate Curves",
   item: "Wrap Jumpsuit",
-  exchangeable: rectangle
+  exchangeable: trans1
 )
 recommendation15.photo.attach(io: file15, filename: "wrap_jumpsuit.jpg", content_type: "image/jpeg")
 recommendation15.save
@@ -429,7 +429,7 @@ file = URI.open("https://images.pexels.com/photos/3952091/pexels-photo-3952091.j
 #   body_part: "Waist",
 #   function: "Contour",
 #   item: "Side-Seamed Jacket",
-#   exchangeable: oval
+#   exchangeable: trans2
 # )
 # recommendation.photo.attach(io: file15, filename: "wrap_jumpsuit.jpg", content_type: "image/jpeg")
 # recommendation.save

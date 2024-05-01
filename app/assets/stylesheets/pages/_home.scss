@@ -10,12 +10,22 @@ justify-content: space-around;
 flex-direction: column;
 }
 
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  p {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
 .first-step-text{
   text-align: left;
 }
 
 .second-step-first{
   text-align: left;
+
 }
 
 .bodyimage2-container{
@@ -42,4 +52,10 @@ flex-direction: column;
 
 .title{
   margin-bottom: 1.5rem;
+}
+
+
+.index-silhouette-bar {
+  font-family: "Playfair Display", serif, "Helvetica", "sans-serif";
+  border: none;
 }
