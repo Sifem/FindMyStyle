@@ -251,7 +251,7 @@ recommendation = Recommendation.new(
 recommendation.photo.attach(io: file, filename: "y", content_type: "image/png")
 recommendation.save
 
-file2 = URI.open("https://media.istockphoto.com/id/1178549488/de/foto/selbstbewusste-frau-mit-zu-sch%C3%BCchternem-l%C3%A4cheln-auf-der-stra%C3%9Fe-in-der-stadt-spazieren.jpg?s=1024x1024&w=is&k=20&c=sgZuAbpLZqJu7YEbS0-GxnuX9-ztHMaupxWjnlcHhXM=")
+file2 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714542685/18c89196-3997-45f8-9efc-62b1223d03a7_yif0uc.jpg")
 recommendation2 = Recommendation.new(
   description: "Flatter your triangle silhouette with this flowy midi skirt. Its A-line shape skims over your hips, creating a balanced look, while the high waistband accentuates your narrowest part for a flattering silhouette.",
   body_part: "Lower Body",
@@ -262,20 +262,20 @@ recommendation2 = Recommendation.new(
 recommendation2.photo.attach(io: file2, filename: "flowy_midi_skirt.jpg", content_type: "image/jpeg")
 recommendation2.save
 
-file3 = URI.open("https://media.istockphoto.com/id/2148284655/de/foto/serie-of-studio-photos-of-young-female-model-wearing-silk-satin-red-blouse-with-simple-beige.jpg?s=1024x1024&w=is&k=20&c=6qDabFQV3lTdxUaH8n887Z-xIn1Czk09C5PuNGwnr0s=")
+file3 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714542753/05dfc333-8866-403a-bd41-38d21b96181f_heekrm.jpg")
 
 recommendation3 = Recommendation.new(
   description: "Soft and feminine, this wrap blouse is perfect for softening the angular lines of your inverted triangle silhouette. The wrap design draws attention away from broad shoulders, while the V-neckline elongates the torso for a more balanced look.",
   body_part: "Upper Body",
   function: "Soften Shoulders",
-  item: "Wrap Blouse",
+  item: "Twin set",
   exchangeable: inverted_triangle
 )
 recommendation3.photo.attach(io: file3, filename: "wrap_blouse.jpg", content_type: "image/jpeg")
 recommendation3.save
 
 
-file4 = URI.open("https://media.istockphoto.com/id/811259140/de/foto/selbstvertrauen-ist-eine-super-leistung.jpg?s=1024x1024&w=is&k=20&c=PxO_mYx8NcTpzakea9jCLgIOb4D5MPMUrNHp9vM2Ix4=")
+file4 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714543264/5fb4faa3-2d4e-4385-9a12-51ade5dc8837_1_nklzi4.jpg")
 
 recommendation4 = Recommendation.new(
   description: "Accentuate your hourglass curves with this bodycon dress. Its form-fitting silhouette hugs your body in all the right places, highlighting your narrow waist and balanced proportions for a stunning look.",
@@ -288,7 +288,7 @@ recommendation4.photo.attach(io: file4, filename: "bodycon_dress.jpg", content_t
 recommendation4.save
 
 
-file5 = URI.open("https://media.istockphoto.com/id/1793110555/de/foto/fr%C3%B6hliche-stilvoll-gekleidete-frau-in-t-shirt-und-blazer-posiert-vor-dunklem-hintergrund.jpg?s=1024x1024&w=is&k=20&c=gxHGU_3Zb-mQf5Vk8HOEVDIN5O9p0fdYttZyAqsgZfk=")
+file5 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553906/pexels-photo-982585_bjfcht.jpg")
 
 recommendation5 = Recommendation.new(
   description: "Elevate your figure-eight silhouette with this tailored blazer. Its structured shoulders and nipped-in waist define your curves, while the elongated silhouette creates a sleek and sophisticated look.",
@@ -301,7 +301,7 @@ recommendation5.photo.attach(io: file5, filename: "tailored_blazer.jpg", content
 recommendation5.save
 
 
-file6 = URI.open("https://media.istockphoto.com/id/1701783779/de/foto/weibliches-model-in-beigefarbener-smart-casual-hose-mit-hohem-bund-studioaufnahme.jpg?s=1024x1024&w=is&k=20&c=jZEquy4kBIj-oryVNMzfdtKyA1QYj-JSLoWj67YOC2w=")
+file6 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553893/pexels-photo-818992_rlbj2a.jpg")
 
 recommendation6 = Recommendation.new(
   description: "Achieve a sleek and polished look with these high-waisted pants designed for oval silhouettes. The wide-leg design elongates your legs, while the high-rise waistband smooths and flatters your midsection for a flattering silhouette.",
@@ -313,13 +313,13 @@ recommendation6 = Recommendation.new(
 recommendation6.photo.attach(io: file6, filename: "high_waisted_pants.jpg", content_type: "image/jpeg")
 recommendation6.save
 
-file7 = URI.open("https://media.istockphoto.com/id/1403630633/de/foto/sch%C3%B6ne-frau-steht-in-turnschuhen-und-tailliertem-kornblumenblauem-kleid-mit-langen-%C3%A4rmeln.jpg?s=2048x2048&w=is&k=20&c=biLdL0w2GJn-XvhlV2EUDUhEHRe70nu3DHJTw5FkGRE=")
+file7 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714542695/9b7750b6-5c57-40f8-b86e-b52df81f549e_uvzfdo.jpg")
 
 recommendation7 = Recommendation.new(
   description: "Add definition to your rectangle silhouette with this fitted sheath dress. Its tailored cut accentuates your waistline, creating curves and enhancing your overall shape for a polished and sophisticated look.",
   body_part: "Full Body",
   function: "Define Waist",
-  item: "Fitted Sheath Dress",
+  item: "Sheath Dress",
   exchangeable: rectangle
 )
 recommendation7.photo.attach(io: file7, filename: "fitted_sheath_dress.jpg", content_type: "image/jpeg")
@@ -337,7 +337,7 @@ recommendation8 = Recommendation.new(
 recommendation8.photo.attach(io: file8, filename: "peplum_top.jpg", content_type: "image/jpeg")
 recommendation8.save
 
-file9 = URI.open("https://media.istockphoto.com/id/1338834908/de/foto/faszinierende-frau-die-f%C3%BCr-ein-foto-in-einem-braunen-jumpsuit-posiert.jpg?s=1024x1024&w=is&k=20&c=EeM-oGqXLrPxkHjUdTgPTQE9fYlfkrmOEUsLGYBZuCQ=")
+file9 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553945/pexels-photo-1759622_gtrz5k.jpg")
 
 recommendation9 = Recommendation.new(
   description: "Opt for this belted jumpsuit to accentuate your rectangle silhouette. The cinched waist creates definition, while the wide-leg pants add volume to your lower body, balancing your proportions for a chic and stylish look.",
@@ -349,7 +349,7 @@ recommendation9 = Recommendation.new(
 recommendation9.photo.attach(io: file9, filename: "belted_jumpsuit.jpg", content_type: "image/jpeg")
 recommendation9.save
 
-file10 = URI.open("https://plus.unsplash.com/premium_photo-1677553955468-80fb1beb2df1?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file10 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553961/pexels-photo-2065200_upafnt.jpg")
 
 recommendation10 = Recommendation.new(
   description: "Achieve a sleek and sophisticated look with this tailored blazer. Its structured silhouette enhances your shoulders, while the single button closure cinches your waist, creating a defined and flattering shape.",
@@ -374,19 +374,19 @@ recommendation11 = Recommendation.new(
 recommendation11.photo.attach(io: file11, filename: "striped_tshirt_dress.jpg", content_type: "image/jpeg")
 recommendation11.save
 
-file12 = URI.open("https://images.pexels.com/photos/264172/pexels-photo-264172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+file12 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714542727/7ea82135-08f6-43d7-b3b6-adc478c653c6_xrmbht.jpg")
 
 recommendation12 = Recommendation.new(
   description: "Opt for this fit-and-flare dress to add volume and shape to your rectangle silhouette. The fitted bodice accentuates your waist, while the flared skirt adds movement and creates a feminine and flattering look.",
   body_part: "Full Body",
   function: "Add Shape",
-  item: "Fit-and-Flare Dress",
+  item: "Flare Dress",
   exchangeable: rectangle
 )
 recommendation12.photo.attach(io: file12, filename: "fit_and_flare_dress.jpg", content_type: "image/jpeg")
 recommendation12.save
 
-file13 = URI.open("https://media.istockphoto.com/id/909016164/de/foto/reife-frau-im-trenchcoat.jpg?s=1024x1024&w=is&k=20&c=jOREw823-YBO4NPaQ1wWcp5CQ1yQnwR4bemlI3vgh-Q=")
+file13 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553937/pexels-photo-1926769_cwivts.jpg")
 
 recommendation13 = Recommendation.new(
   description: "Make a statement with this belted trench coat. The belted waist creates definition, while the structured silhouette adds polish to your overall look. Perfect for layering over your favorite outfits.",
@@ -398,7 +398,7 @@ recommendation13 = Recommendation.new(
 recommendation13.photo.attach(io: file13, filename: "belted_trench_coat.jpg", content_type: "image/jpeg")
 recommendation13.save
 
-file14 = URI.open("https://images.pexels.com/photos/22039513/pexels-photo-22039513/free-photo-of-kent-sehir-kadin-model.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+file14 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553930/pexels-photo-1163194_usm81i.jpg")
 
 recommendation14 = Recommendation.new(
   description: "Add a pop of color to your wardrobe with this tailored blazer. The structured shoulders and tapered waist create a flattering silhouette, while the vibrant hue adds personality to your ensemble.",
@@ -410,13 +410,13 @@ recommendation14 = Recommendation.new(
 recommendation14.photo.attach(io: file14, filename: "colorful_blazer.jpg", content_type: "image/jpeg")
 recommendation14.save
 
-file15 = URI.open("https://images.pexels.com/photos/2701269/pexels-photo-2701269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+file15 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553923/pexels-photo-1007018_tumeam.jpg")
 
 recommendation15 = Recommendation.new(
   description: "Stay chic and comfortable in this wrap jumpsuit. The wrap design cinches at the waist, accentuating your curves, while the wide-leg pants elongate your legs for a flattering and effortless look.",
   body_part: "Full Body",
   function: "Accentuate Curves",
-  item: "Wrap Jumpsuit",
+  item: "Skirt Flare",
   exchangeable: trans1
 )
 recommendation15.photo.attach(io: file15, filename: "wrap_jumpsuit.jpg", content_type: "image/jpeg")

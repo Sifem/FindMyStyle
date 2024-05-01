@@ -3,12 +3,10 @@
   text-align: center;
 }
 
-
-
 .card-header {
   // display: flex;
   // align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .card-header * {
@@ -25,12 +23,12 @@
 
 .card-header dl {
   display: flex;
-  flex-wrap: wrap;
   margin: 0;
 }
 
 .card-header dt {
   margin-right: 5px;
+  font-size: 8pt;
 }
 
 .card-body {
@@ -52,7 +50,9 @@
 .card-header dd {
   margin: 0;
   display: flex;
-  justify-content: between;
+  justify-content: space-between;
+  font-size: 9pt;
+
 }
 
 .column-recommendation {
@@ -67,8 +67,8 @@
 }
 
 .fa-bookmark {
-  margin-top: 24px;
-  font-size: 40px;
+ margin-top: 3px;
+  font-size: 30px;
 }
 
 .card-header {
