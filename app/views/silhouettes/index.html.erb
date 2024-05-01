@@ -1,9 +1,8 @@
-<div class="index-container">
+<div class="index-container ">
 <%# <div>
   <i link_to  class=" d-flex fa-solid fa-arrow-left"></i>
 </div> %>
-  <h2>Explore</h2>
-  <h3>Explore silhouette options below:</h3>
+  <h2>Explore silhouettes below:</h2>
 <div class="grid-container d-flex flex-column justify-content-center w-75 mx-auto g-3">
     <% @silhouettes.each do |silhouette| %>
   <%= link_to silhouette_path(silhouette), class:"text-decoration-none" do  %>

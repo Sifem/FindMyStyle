@@ -1,7 +1,12 @@
 <div data-controller="chatroom-subscription"
     class="container chatroom"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h1 class="text-center">AI Stylist</h1>
+  <div class="d-flex justify-content-around">
+    <h1 class="text-center">AI Stylist</h1>
+    <div class="chatroom-profile-pic">
+      <%= image_tag "sifem_photo.jpeg", style: "width:90px; border-radius:50px;"  %>
+    </div>
+  </div>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -18,3 +23,4 @@
       %>
       <%= f.submit "Send", class: "btn chat-button mb-3" %>
     <% end %>
+</div>

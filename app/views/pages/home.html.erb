@@ -1,21 +1,24 @@
 <div class="home-container">
-  <div  class= "instructions">
+  <div  class= "instructions text-center">
     <div class="title fs-1">
-      <p>Discover your natural silhouette</p>
-    </div>
-
-    <div class="first-step-text fs-5">
-      <p>Your body's basic shape, determined by the shoulders, waist and hips thighs, reveals your natural silhouette in clothing</p>
+      <h2>Learn Your Neutral Silhouette</h2>
     </div>
 
     <div class="second-step-first fs-5">
-      <p>Focus solely on your body's basic shape for now, disregarding size or type</p>
+      <p>Your body's basic shape, determined by the shoulders, waist, and hips/thighs, reveals your natural silhouette in clothing. </p>
     </div>
 
+      <div class="row">
+        <div class="col-8 bodyimage2-container">      <%= image_tag('bodyimage2.jpg', alt: 'logo find my style', class:"img-fluid small-image logo-icon") %>
+      </div>
+        <div class="col-4 second-step-first fs-5">Focus solely on your body's basic shape for now, disregarding size or type</div>
+      </div>
+
+      <p class="second-step-first fs-5 m-3">Discover your silhouette on the next page, where descriptions alongside each shape will guide you.</p>
 
   </div>
   <div class="discover-shape">
-    <%= link_to silhouettes_path, class: "category-filter btn btn-pink" do %>Discover your perfect match
+    <%= link_to silhouettes_path, class: "category-filter btn btn-pink" do %>Find out your silhouette!
       <i class="fa-solid fa-arrow-right fa-2xl white-icon"></i>
     <% end %>
   </div>

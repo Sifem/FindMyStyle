@@ -4,14 +4,13 @@
   </div>
 
 <div class= "container silhouette-card">
-
   <div class= "silhouette-graphic-description d-flex">
     <div class= "col-2">
       <%= cl_image_tag @silhouette.photo.key, class: 'img-fluid small-image' %>
     </div>
     <div class= "col-10 ps-2">
       <h1><%= @silhouette.neutral_silhouette.upcase %></h1>
-    <h2>Your natural silhouette is the <%= @silhouette.neutral_silhouette.capitalize %> if:</h2>
+      <h2>Your natural silhouette is the <%= @silhouette.neutral_silhouette.capitalize %> if:</h2>
     </div>
   </div>
 
@@ -24,24 +23,26 @@
   </div>
 </div>
 
-<div class= "footer-pic d-flex justify-content-end">
-<%= cl_image_tag @silhouette.photo.key, class: "img-body" %>
-</div>
-<% if (current_user.silhouettes.count >= 1) %>
-  <div class="see-recommendations">
-    <%= link_to user_recommendations_path(current_user.id), class: "category-filter btn btn-pink" do %>See your recommendations
-      <i class="fa-solid fa-arrow-right fa-2xl white-icon"></i>
-    <% end %>
-  <% else  %>
-  <div class="see-recommendations">
-    <%= link_to select_silhouette_path, class: "category-filter btn btn-pink" do %>Select your silhouette
-      <i class="fa-solid fa-arrow-right fa-2xl white-icon"></i>
-    <% end %>
-</div>
-    <hr>
-    <div class="see-recommendations btn btn-pink">
-      <%= link_to silhouettes_path, class: "" do %> <i class="fa-solid fa-arrow-left fa-2xl white-icon"></i>
-        <strong class="back">back</strong>
-    </div>
+  <div class= "footer-pic d-flex justify-content-end">
+    <%= cl_image_tag @silhouette.photo.key, class: "img-body" %>
+  </div>
+  <% if (current_user.silhouettes.count >= 1) %>
+    <div class="see-recommendations">
+      <%= link_to user_recommendations_path(current_user.id), class: "category-filter btn btn-pink" do %>See your recommendations
+        <i class="fa-solid fa-arrow-right fa-2xl white-icon"></i>
       <% end %>
+      </div>
+    <% else  %>
+      <div class="see-recommendations">
+        <%= link_to select_silhouette_path, class: "category-filter btn btn-pink" do %>Select your silhouette
+          <i class="fa-solid fa-arrow-right fa-2xl white-icon"></i>
+        <% end %>
+      </div>
+    <hr>
+  <div class="see-recommendations btn btn-pink">
+    <%= link_to silhouettes_path, class: "text-light" do %> <i class="fa-solid fa-arrow-left fa-2xl white-icon"></i>
+      <strong class="back">back</strong>
     <% end %>
+  </div>
+    <% end %>
+  </div>
