@@ -294,6 +294,17 @@ recommendation6 = Recommendation.new(
 recommendation6.photo.attach(io: file6, filename: "high_waisted_pants.jpg", content_type: "image/jpeg")
 recommendation6.save
 
+file8 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714542577/e63e7291-da68-45db-bffd-3f4b04b56609_z3wwbs.jpg")
+recommendation8 = Recommendation.new(
+  description: "Create the illusion of curves with this peplum top designed for rectangle silhouettes. The flared hem adds volume to your hips, while the fitted bodice defines your waist, enhancing your natural shape.",
+  body_part: "Upper Body",
+  function: "Create Curves",
+  item: "Peplum Top",
+  exchangeable: rectangle
+)
+recommendation8.photo.attach(io: file8, filename: "peplum_top.jpg", content_type: "image/jpeg")
+recommendation8.save
+
 file7 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714542695/9b7750b6-5c57-40f8-b86e-b52df81f549e_uvzfdo.jpg")
 
 recommendation7 = Recommendation.new(
@@ -306,17 +317,7 @@ recommendation7 = Recommendation.new(
 recommendation7.photo.attach(io: file7, filename: "fitted_sheath_dress.jpg", content_type: "image/jpeg")
 recommendation7.save
 
-file8 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714542577/e63e7291-da68-45db-bffd-3f4b04b56609_z3wwbs.jpg")
 
-recommendation8 = Recommendation.new(
-  description: "Create the illusion of curves with this peplum top designed for rectangle silhouettes. The flared hem adds volume to your hips, while the fitted bodice defines your waist, enhancing your natural shape.",
-  body_part: "Upper Body",
-  function: "Create Curves",
-  item: "Peplum Top",
-  exchangeable: rectangle
-)
-recommendation8.photo.attach(io: file8, filename: "peplum_top.jpg", content_type: "image/jpeg")
-recommendation8.save
 
 file9 = URI.open("https://res.cloudinary.com/dgugr5vsw/image/upload/fl_preserve_transparency/v1714553945/pexels-photo-1759622_gtrz5k.jpg")
 
