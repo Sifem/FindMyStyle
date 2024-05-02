@@ -4,7 +4,7 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     if Message.all.count < 1
       @message = Message.new
-      @message.response = "Hey! I'm your stylist Sifem, how can I help?"
+      @message.response = "Let's unlock your style potential. I'm here for all your outfit questions. What's the occasion?"
       @message.chatroom = @chatroom
       @message.user = current_user
       @message.save!

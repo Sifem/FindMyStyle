@@ -1,0 +1,28 @@
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  margin-top: 20px;
+  padding: 20px;
+  width: 80%;
+  max-width: 300px;
+  background: white;
+  box-shadow: 3px 3px 6px #FF7DE4;
+  border-radius: 10% 6%;
+}
+
+.modal-content img {
+  width: 100%;
+  padding: 18px;
+  box-sizing: border-box;
+  border-radius: 2% 1%;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 150px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #FF7DE4;
+}

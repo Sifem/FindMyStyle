@@ -7,3 +7,76 @@
 .icon {
   color:  black;
 }
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  border-radius: 20px 20px 0 0;
+  padding: 10px 0;
+  overflow: visible;
+}
+
+.footer-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.icon {
+  text-decoration: none;
+  color: #333;
+  font-size: 30px;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.icon i {
+  padding: 10px;
+}
+
+.icon.active {
+  transform: translateY(-10px);
+  border: none !important;
+}
+
+.icon:hover i, .icon.active i {
+  color: #FF7DE4;
+}
+
+.icon.active::after {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%) scale(1.2);
+  border-top: 3px solid #FF7DE4;
+  z-index: -1;
+
+}
+
+.icon.active > i {
+  transform: translateY(-28px);
+  font-size: 36px;
+
+}
+
+.footer-container {
+  border-top: 2px solid #FF7DE4;
+}
+
+.navbar-container {
+  // border-bottom: 1px inset #ff7de5;
+}

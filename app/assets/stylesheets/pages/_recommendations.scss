@@ -66,11 +66,10 @@
   justify-content: space-between;
 }
 
-.fa-bookmark {
- margin-top: 3px;
+.card-header .fa-bookmark {
+  margin: 3px 0 0 10px;
   font-size: 30px;
 }
-
 .card-header {
   border-radius: 10px 10px 0 0 !important;
 }
