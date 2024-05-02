@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def select_silhouette
-    @silhouettes = Silhouette.where(combined_silhouette: nil)
+    @silhouettes = Silhouette.where(combined_silhouette: nil).with_attached_photo
     @user_silhouette = UserSilhouette.new
   end
 
